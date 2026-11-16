@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>graphe</title><style>
+html,body{margin:0;padding:0;background:#fff}
+#fig{position:relative;width:605px;height:300px;overflow:hidden;background:#fff;
+ font-family:'Inter',sans-serif;color:#202125;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+#fig svg.liens{position:absolute;left:0;top:0}
+.t{position:absolute;white-space:nowrap;line-height:1.25;margin:0}
+.c{transform:translateX(-50%);text-align:center}
+.nom{font-size:13px;font-weight:700;font-style:normal}
+.nom_c{font-size:16px;font-weight:700;font-style:normal}
+.prog{font-size:12.5px;font-weight:600;font-style:italic}
+.prog_c{font-size:15px;font-weight:600;font-style:italic}
+.regime{font-size:8.5px;font-weight:700;font-style:normal}
+.categorie{font-size:8px;font-weight:600;font-style:normal}
+.legende{font-size:10px;font-weight:400;font-style:normal}
+.verbe{font-size:8.5px;font-weight:600;font-style:normal}
+.detail{font-size:10px;font-weight:400;font-style:normal}
+.flux{font-size:10px;font-weight:600;font-style:normal}
+.axe{font-size:8px;font-weight:600;font-style:normal}
+.rang{font-size:8px;font-weight:600;font-style:normal}
+.regime,.categorie,.verbe,.axe,.rang{letter-spacing:0.11em}
+.legende,.detail,.categorie,.axe,.rang{color:#686870}
+.nom_c,.prog_c{letter-spacing:-0.01em}
+.flux{color:#202125}
+.fl{display:inline-block;vertical-align:-1px;margin-right:3px}
+img{position:absolute;display:block}
+</style></head><body><div id="fig">
+<svg class="liens" width="605" height="300" viewBox="0 0 605 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="fl-bleu" viewBox="0 0 8 8" refX="7.6" refY="4" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.6 L8,4 L0,7.4 z" fill="#3B38F5"/></marker>
+<marker id="fl-orange" viewBox="0 0 8 8" refX="7.6" refY="4" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.6 L8,4 L0,7.4 z" fill="#FF5B23"/></marker>
+</defs>
+<path class="lk" data-id="bdt→repenser" d="M191.82,139.67 L193.29,140.60 L194.76,141.51 L196.23,142.42 L197.71,143.31 L199.20,144.19 L200.69,145.05 L202.18,145.90 L203.69,146.74 L205.19,147.56 L206.71,148.37 L208.22,149.17 L209.75,149.95 L211.28,150.72 L212.81,151.48 L214.35,152.22 L215.89,152.95 L217.44,153.67 L219.00,154.37 L220.56,155.06 L222.12,155.74 L223.70,156.40 L225.27,157.05 L226.85,157.68 L228.44,158.30 L230.03,158.91 L231.63,159.51 L233.23,160.09 L234.84,160.66 L236.46,161.21 L238.07,161.76 L239.70,162.28 L241.33,162.80 L242.96,163.30 L244.60,163.79 L246.25,164.26 L247.90,164.72 L249.56,165.17 L251.22,165.61 L252.89,166.03 L254.56,166.43 L256.24,166.83 L257.92,167.21 L259.61,167.58 L261.30,167.93 L263.00,168.27 L264.70,168.60 L266.41,168.91 L268.13,169.21 L269.85,169.50 L271.58,169.77 L273.31,170.03 L275.04,170.28" fill="none" stroke="#3B38F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-bleu)"><title>Banque des Territoires → Repenser la Ville : FINANCER 40 % (Frey et al., 2022)</title></path>
+<path class="lk" data-id="cdc→bdt" d="M200.36,62.54 L199.34,63.11 L198.32,63.68 L197.31,64.26 L196.29,64.83 L195.27,65.40 L194.25,65.98 L193.24,66.55 L192.22,67.12 L191.20,67.70 L190.19,68.27 L189.17,68.84 L188.15,69.42 L187.14,69.99 L186.12,70.56 L185.10,71.14 L184.09,71.71 L183.07,72.28 L182.05,72.85 L181.04,73.43 L180.02,74.00 L179.00,74.57 L177.99,75.15 L176.97,75.72" fill="none" stroke="#3B38F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-bleu)"><title>Caisse des Dépôts → Banque des Territoires : DIRIGER</title></path>
+<path class="lk" data-id="cdc→cdch" d="M265.75,62.54 L265.79,63.11 L265.82,63.68 L265.86,64.26 L265.90,64.83 L265.94,65.40 L265.98,65.98 L266.01,66.55 L266.05,67.12 L266.09,67.70 L266.13,68.27 L266.16,68.84 L266.20,69.42 L266.24,69.99 L266.28,70.56 L266.32,71.14 L266.35,71.71 L266.39,72.28 L266.43,72.85 L266.47,73.43 L266.51,74.00 L266.54,74.57 L266.58,75.15 L266.62,75.72 L266.66,76.29 L266.70,76.87 L266.73,77.44 L266.77,78.01 L266.81,78.59 L266.85,79.16" fill="none" stroke="#3B38F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-bleu)"><title>Caisse des Dépôts → CDC Habitat : DÉTENIR</title></path>
+<path class="lk" data-id="cdch→repenser" d="M294.96,127.86 L295.49,128.49 L296.02,129.11 L296.55,129.74 L297.08,130.37 L297.61,131.00 L298.14,131.63 L298.67,132.26 L299.20,132.89 L299.73,133.52 L300.26,134.15 L300.79,134.77 L301.32,135.40 L301.85,136.03 L302.38,136.66 L302.91,137.29 L303.44,137.92 L303.97,138.55 L304.50,139.18 L305.03,139.81 L305.56,140.43 L306.08,141.06 L306.61,141.69 L307.14,142.32 L307.67,142.95 L308.20,143.58 L308.73,144.21 L309.26,144.84 L309.79,145.47 L310.32,146.09 L310.85,146.72 L311.38,147.35 L311.91,147.98 L312.44,148.61 L312.97,149.24 L313.50,149.87 L314.03,150.50 L314.56,151.13 L315.09,151.75 L315.62,152.38 L316.15,153.01 L316.68,153.64 L317.21,154.27 L317.74,154.90 L318.27,155.53 L318.80,156.16 L319.33,156.79 L319.86,157.42 L320.39,158.04 L320.92,158.67 L321.45,159.30" fill="none" stroke="#3B38F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-bleu)"><title>CDC Habitat → Repenser la Ville : LOGER 30 % (Frey et al., 2022)</title></path>
+<path class="lk" data-id="collectivites→frey" d="M428.87,134.70 L430.08,135.92 L431.30,137.14 L432.51,138.35 L433.73,139.57 L434.95,140.78 L436.16,142.00 L437.38,143.22 L438.59,144.43 L439.81,145.65 L441.02,146.87 L442.24,148.08 L443.46,149.30 L444.67,150.51 L445.89,151.73 L447.10,152.95 L448.32,154.16 L449.53,155.38 L450.75,156.60 L451.97,157.81 L453.18,159.03 L454.40,160.24 L455.61,161.46 L456.83,162.68 L458.04,163.89 L459.26,165.11 L460.48,166.33 L461.69,167.54 L462.91,168.76 L464.12,169.97 L465.34,171.19 L466.55,172.41 L467.77,173.62 L468.98,174.84 L470.20,176.06 L471.42,177.27 L472.63,178.49 L473.85,179.71 L475.06,180.92 L476.28,182.14 L477.49,183.35 L478.71,184.57 L479.93,185.79 L481.14,187.00 L482.36,188.22 L483.57,189.44 L484.79,190.65 L486.00,191.87 L487.22,193.08 L488.44,194.30 L489.65,195.52 L490.87,196.73 L492.08,197.95 L493.30,199.17 L494.51,200.38 L495.73,201.60 L496.95,202.81 L498.16,204.03 L499.38,205.25 L500.59,206.46 L501.81,207.68 L503.02,208.90 L504.24,210.11 L505.46,211.33 L506.67,212.54 L507.89,213.76 L509.10,214.98 L510.32,216.19 L511.53,217.41 L512.75,218.63" fill="none" stroke="#3B38F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-bleu)"><title>Collectivités → Frey : CONCÉDER ZCN Strasbourg, seule concession active (Eurométropole, 2025)</title></path>
+<path class="lk" data-id="collectivites→repenser" d="M357.82,137.29 L357.33,137.92 L356.84,138.55 L356.35,139.18 L355.87,139.81 L355.38,140.43 L354.89,141.06 L354.41,141.69 L353.92,142.32 L353.43,142.95 L352.94,143.58 L352.46,144.21 L351.97,144.84 L351.48,145.47 L351.00,146.09 L350.51,146.72 L350.02,147.35 L349.53,147.98 L349.05,148.61 L348.56,149.24 L348.07,149.87 L347.59,150.50 L347.10,151.13 L346.61,151.75 L346.12,152.38 L345.64,153.01 L345.15,153.64 L344.66,154.27 L344.18,154.90 L343.69,155.53 L343.20,156.16 L342.71,156.79 L342.23,157.42 L341.74,158.04 L341.25,158.67 L340.77,159.30" fill="none" stroke="#FF5B23" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-orange)"><title>Collectivités → Repenser la Ville : REPRENDRE SPL Citallia, Montigny-lès-Cormeilles (Localtis, 2025)</title></path>
+<path class="lk" data-id="frey→repenser" d="M472.84,220.00 L471.14,219.42 L469.44,218.83 L467.74,218.24 L466.03,217.65 L464.33,217.07 L462.63,216.48 L460.92,215.89 L459.22,215.30 L457.52,214.72 L455.82,214.13 L454.11,213.54 L452.41,212.95 L450.71,212.37 L449.01,211.78 L447.30,211.19 L445.60,210.60 L443.90,210.02 L442.19,209.43 L440.49,208.84 L438.79,208.26 L437.09,207.67 L435.38,207.08 L433.68,206.49 L431.98,205.91 L430.27,205.32 L428.57,204.73 L426.87,204.14 L425.17,203.56 L423.46,202.97 L421.76,202.38 L420.06,201.79 L418.35,201.21 L416.65,200.62 L414.95,200.03" fill="none" stroke="#FF5B23" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#fl-orange)"><title>Frey → Repenser la Ville : SE RETIRER 30 %, sortie « faute de rentabilité » (Localtis, 2025)</title></path>
+</svg>
+<img alt="Frey" data-g="frey" src="../logos/image_frey_logo.png" style="left:478.70px;top:224.60px;width:114.30px;height:34.28px">
+<div class="t c regime" data-g="frey" style="left:535.85px;top:263.88px;color:#3B38F5">FINANCIER</div>
+<div class="t c legende" data-g="frey" style="left:535.85px;top:275.50px">foncière cotée</div>
+<div class="t c prog" data-g="repenser" style="left:331.51px;top:163.44px">Repenser la Ville</div>
+<div class="t c categorie" data-g="repenser" style="left:331.51px;top:180.06px">VÉHICULE COMMUN</div>
+<div class="t c legende" data-g="repenser" style="left:331.51px;top:191.06px">SAS de portage foncier, 200 M€</div>
+<div class="t c nom" data-g="bdt" style="left:141.38px;top:79.53px">Banque des</div>
+<div class="t c nom" data-g="bdt" style="left:141.38px;top:95.78px">Territoires</div>
+<div class="t c legende" data-g="bdt" style="left:141.38px;top:113.03px">direction de la</div>
+<div class="t c legende" data-g="bdt" style="left:141.38px;top:125.53px">Caisse des Dépôts</div>
+<img alt="CDC Habitat" data-g="cdch" src="../logos/image18.png" style="left:222.95px;top:84.64px;width:90.00px;height:22.27px">
+<div class="t c legende" data-g="cdch" style="left:267.95px;top:110.92px">bailleur, filiale de la Caisse</div>
+<img alt="Caisse des Dépôts" data-g="cdc" src="../logos/image16.png" style="left:248.40px;top:12.00px;width:30.00px;height:30.00px">
+<div class="t c legende" data-g="cdc" style="left:263.40px;top:46.00px">actionnaire de référence</div>
+<div class="t c nom" data-g="collectivites" style="left:389.96px;top:87.66px">Collectivités</div>
+<div class="t c legende" data-g="collectivites" style="left:389.96px;top:104.91px">Eurométropole</div>
+<div class="t c legende" data-g="collectivites" style="left:389.96px;top:117.41px">de Strasbourg ·</div>
+<div class="t c legende" data-g="collectivites" style="left:389.96px;top:129.91px">SPL Citallia</div>
+<div class="t" style="right:377.37px;text-align:right;top:163.51px;line-height:14.00px;font-size:10px"><span class="verbe" style="color:#3B38F5">FINANCER</span><span style="display:inline-block;width:6px"></span><span class="detail">40 %</span></div>
+<div class="t" style="right:419.83px;text-align:right;top:52.72px;line-height:12.12px;font-size:10px"><span class="verbe" style="color:#3B38F5">DIRIGER</span></div>
+<div class="t" style="left:270.28px;top:64.50px;line-height:12.12px;font-size:10px"><span class="verbe" style="color:#3B38F5">DÉTENIR</span></div>
+<div class="t" style="right:305.03px;text-align:right;top:142.55px;line-height:14.00px;font-size:10px"><span class="verbe" style="color:#3B38F5">LOGER</span><span style="display:inline-block;width:6px"></span><span class="detail">30 %</span></div>
+<div class="t" style="left:474.20px;top:159.93px;line-height:12.12px;font-size:10px"><span class="verbe" style="color:#3B38F5">CONCÉDER</span></div>
+<div class="t" style="left:355.48px;top:149.47px;line-height:12.12px;font-size:10px"><span class="verbe" style="color:#FF5B23">REPRENDRE</span></div>
+<div class="t" style="right:165.10px;text-align:right;top:214.02px;line-height:14.00px;font-size:10px"><span class="verbe" style="color:#FF5B23">SE RETIRER</span><span style="display:inline-block;width:6px"></span><span class="detail">30 %</span></div>
+<div class="t rang" style="left:12px;top:90.78px">PUBLIC</div>
+<div class="t rang" style="left:12px;top:166.25px">PARTENARIAT</div>
+<div class="t rang" style="left:12px;top:236.74px">PRIVÉ</div>
+</div></body></html>
