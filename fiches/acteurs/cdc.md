@@ -3,6 +3,7 @@ type: acteur
 id: cdc
 nom: Caisse des Dépôts
 galaxie: Groupe Caisse des Dépôts
+tête: true
 logo: image16.png
 statut: public
 régime: public

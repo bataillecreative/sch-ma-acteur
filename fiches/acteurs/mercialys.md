@@ -7,7 +7,7 @@ statut: privé
 régime: financier
 légende: foncière cotée
 connexions:
-- 'LOUER leclerc : Brest (Mercialys, 2025)'
+- 'LOUER adherents_leclerc : Brest (Mercialys, 2025)'
 ---
 
 # Mercialys

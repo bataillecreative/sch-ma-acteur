@@ -1,6 +1,51 @@
 {
  "noeuds": [
   {
+   "texte": "# ACDLec\n\n## Notes",
+   "id": "acdlec",
+   "nom": "ACDLec",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "role": null,
+   "galaxie": "Groupe Leclerc",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "marque et doctrine, aucun foncier"
+  },
+  {
+   "texte": "# 579 adhérents\n\n## Repères\n\n- Les murs appartiennent aux 579 adhérents via leurs SCI ; aucune foncière nationale (Les Échos, 2026)\n- Ils achètent des murs (hypers Casino, 2019) ou deviennent locataires (Mercialys, 2025)\n\n## Notes",
+   "id": "adherents_leclerc",
+   "nom": "579 adhérents",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "role": null,
+   "galaxie": "Groupe Leclerc",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "SAS et SCI locales : murs, galeries, parkings"
+  },
+  {
+   "texte": "# Adhérents Mousquetaires\n\n## Repères\n\n- Environ la moitié des surfaces en propriété individuelle, « hors capitaux du Groupement » (LSA, s.d.)\n\n## Notes",
+   "id": "adherents_mousq",
+   "nom": "Adhérents Mousquetaires",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "role": null,
+   "galaxie": "Les Mousquetaires",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "SCI propriétaires des murs qu'ils exploitent"
+  },
+  {
    "texte": "# Auchan\n\n## Notes",
    "id": "auchan",
    "nom": "Auchan",
@@ -10,7 +55,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
-   "galaxie": "Famille Mulliez",
+   "galaxie": "Association familiale Mulliez",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "enseigne"
   },
@@ -25,6 +71,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "direction de la Caisse des Dépôts"
   },
@@ -39,6 +86,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Carrefour",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée des galeries"
   },
@@ -53,8 +101,24 @@
    "regime": "bascule",
    "role": null,
    "galaxie": "Carrefour",
+   "tete": true,
    "nom_sous_logo": true,
    "legende": "enseigne"
+  },
+  {
+   "texte": "# Carrefour Property\n\n## Repères\n\n- Bras immobilier du groupe, « sans maîtrise » quand les lots sont cédés (grille des propriétaires, partie 4)\n\n## Notes",
+   "id": "carrefour_property",
+   "nom": "Carrefour Property",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image26.png",
+   "statut": "prive",
+   "regime": "financier",
+   "role": null,
+   "galaxie": "Carrefour",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "filiale immobilière : détient murs et parkings, mène les cessions"
   },
   {
    "texte": "# Casino\n\n**Diapo** : Icade–Casino : vers la financiarisation de l'action publique\n\n## Notes",
@@ -67,6 +131,7 @@
    "regime": "bascule",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "cède pour se désendetter"
   },
@@ -81,6 +146,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "tete": true,
    "nom_sous_logo": false,
    "legende": "actionnaire de référence"
   },
@@ -95,6 +161,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "bailleur, filiale de la Caisse"
   },
@@ -108,9 +175,25 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
-   "galaxie": "Famille Mulliez",
+   "galaxie": "Association familiale Mulliez",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière de la famille"
+  },
+  {
+   "texte": "# Foncière Chabrières\n\n## Repères\n\n- Société civile à capital variable, SIREN 344 092 341, gérée par ITM Entreprises ; dépose des demandes de CDAC comme propriétaire\n- Unité de compte du contrat d'assurance-vie Chabrières, réservé aux membres du groupement (Idéal Investisseur, 2026)\n\n## Notes",
+   "id": "chabrieres",
+   "nom": "Foncière Chabrières",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "financier",
+   "role": null,
+   "galaxie": "Les Mousquetaires",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "foncière collective, support d'assurance-vie des membres"
   },
   {
    "texte": "# Collectivités\n\n## Notes",
@@ -123,6 +206,7 @@
    "regime": "public",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "Eurométropole de Strasbourg · SPL Citallia"
   },
@@ -137,6 +221,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "État",
+   "tete": true,
    "nom_sous_logo": false,
    "legende": "Action cœur de ville · plan zones commerciales"
   },
@@ -151,8 +236,24 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée"
+  },
+  {
+   "texte": "# Galec\n\n## Notes",
+   "id": "galec",
+   "nom": "Galec",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "role": null,
+   "galaxie": "Groupe Leclerc",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "achats et logistique, aucun foncier"
   },
   {
    "texte": "# GreenYellow\n\n## Notes",
@@ -165,6 +266,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "ombrières"
   },
@@ -179,8 +281,39 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée, filiale de la Caisse"
+  },
+  {
+   "texte": "# Immobilière Carrefour\n\n## Repères\n\n- Syndic de la copropriété commerciale d'Amiens, Vallée Saint-Ladre (grille des propriétaires, partie 4)\n\n## Notes",
+   "id": "immo_carrefour",
+   "nom": "Immobilière Carrefour",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": null,
+   "role": "syndic de copropriété",
+   "galaxie": "Carrefour",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "syndic de copropriétés commerciales (ex. Amiens)"
+  },
+  {
+   "texte": "# L'Immobilière Européenne des Mousquetaires\n\n## Repères\n\n- SA, SIREN 334 055 647 ; absorbe des SCI d'adhérents par fusion ; propriétaire de friches, dont l'ancien Intermarché de Concarneau\n\n## Notes",
+   "id": "immo_europeenne",
+   "nom": "L'Immobilière Européenne des Mousquetaires",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "hybride",
+   "role": null,
+   "galaxie": "Les Mousquetaires",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "foncière collective (SA), absorbe des SCI d'adhérents"
   },
   {
    "texte": "# Immo Mousquetaires\n\n## Notes",
@@ -193,6 +326,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "aménageur et promoteur, sans les murs"
   },
@@ -206,9 +340,10 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
-   "galaxie": null,
+   "galaxie": "Groupe Leclerc",
+   "tete": true,
    "nom_sous_logo": false,
-   "legende": "579 adhérents propriétaires de leurs murs"
+   "legende": "mouvement d'indépendants"
   },
   {
    "texte": "# Mercialys\n\n## Notes",
@@ -221,6 +356,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée"
   },
@@ -235,6 +371,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "tete": true,
    "nom_sous_logo": false,
    "legende": "≈ 50 % adhérents, ≈ 50 % groupement"
   },
@@ -248,7 +385,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
-   "galaxie": "Famille Mulliez",
+   "galaxie": "Association familiale Mulliez",
+   "tete": true,
    "nom_sous_logo": false,
    "legende": "patrimoine géré en famille"
   },
@@ -263,8 +401,24 @@
    "regime": null,
    "role": "opérateur privé",
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "promoteur"
+  },
+  {
+   "texte": "# Nhood\n\n## Repères\n\n- Promotion internalisée (Nhood, ex-Nodi) (Nhood, 2025)\n\n## Notes",
+   "id": "nhood",
+   "nom": "Nhood",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": null,
+   "role": "opérateur privé",
+   "galaxie": "Association familiale Mulliez",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "opérateur : conçoit, gère"
   },
   {
    "texte": "# SCET\n\n## Notes",
@@ -277,6 +431,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "baromètre Icade–SCET"
   },
@@ -291,6 +446,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "investisseurs britanniques et singapouriens"
   },
@@ -305,6 +461,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "murs ex-Casino"
   },
@@ -319,6 +476,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "État",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "ANCT, cofinancé par la Banque des Territoires"
   },
@@ -332,9 +490,25 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
-   "galaxie": "Famille Mulliez",
+   "galaxie": "Association familiale Mulliez",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "hypers Auchan réduits"
+  },
+  {
+   "texte": "# Chaire Nhood | Ceetrus\n\n## Repères\n\n- Chaire en immobilier et urbanisme commercial, chaire d'Économie urbaine de l'ESSEC (ESSEC, s.d.)\n\n## Notes",
+   "id": "chaire_essec",
+   "nom": "Chaire Nhood | Ceetrus",
+   "type": "programme",
+   "categorie": "recherche",
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "role": null,
+   "galaxie": "Association familiale Mulliez",
+   "tete": false,
+   "nom_sous_logo": false,
+   "legende": "immobilier et urbanisme commercial, ESSEC"
   },
   {
    "texte": "# Plan de transformation des zones commerciales\n\n## Repères\n\n- Copiloté par l'ANCT, la DGE et la DGALN ; 112 dossiers déposés\n- 74 lauréats le 29/03/2024 (26 M€), puis 16 le 24/05/2024 (5,4 M€) : 31,4 M€ au total (DGE, 2024 ; Bercy, 2024)\n- Troisième vague annoncée pour l'automne 2024, jamais publiée (LSA, 2024a)\n\n## Notes",
@@ -347,6 +521,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "État",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "lancé en septembre 2023"
   },
@@ -361,6 +536,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière commune, novembre 2024"
   },
@@ -375,6 +551,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "SAS de portage foncier, 200 M€"
   },
@@ -389,6 +566,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "offre Icade de reconversion"
   },
@@ -403,6 +581,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "Intermarché–Bricomarché, quartier mixte"
   },
@@ -417,11 +596,30 @@
    "regime": "bascule",
    "role": null,
    "galaxie": null,
+   "tete": false,
    "nom_sous_logo": false,
    "legende": "SNC Carrefour 80 %, Nexity 20 %"
   }
  ],
  "liens": [
+  {
+   "de": "adherents_leclerc",
+   "vers": "leclerc",
+   "verbe": "ADHÉRER",
+   "detail": null,
+   "source": "Les Échos, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "adherents_mousq",
+   "vers": "mousquetaires",
+   "verbe": "ADHÉRER",
+   "detail": "1 667 adhérents associés",
+   "source": "Autorité de la concurrence, 2024",
+   "flux": null,
+   "couleur": "bleu"
+  },
   {
    "de": "auchan",
    "vers": "ceetrus",
@@ -470,10 +668,19 @@
   },
   {
    "de": "carrefour",
-   "vers": "villes_commerces",
+   "vers": "carrefour_property",
    "verbe": "DÉTENIR",
-   "detail": "80 %",
-   "source": "Carrefour et Nexity, 2023",
+   "detail": "filiale",
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "carrefour",
+   "vers": "immo_carrefour",
+   "verbe": "DÉTENIR",
+   "detail": "filiale",
+   "source": null,
    "flux": null,
    "couleur": "bleu"
   },
@@ -488,12 +695,12 @@
   },
   {
    "de": "carrefour",
-   "vers": "supr",
-   "verbe": "CÉDER",
-   "detail": "78 magasins, Carrefour reste locataire",
-   "source": "SUPR, 2025 ; Carrefour, 2026",
+   "vers": "villes_commerces",
+   "verbe": "DÉTENIR",
+   "detail": "80 %",
+   "source": "Carrefour et Nexity, 2023",
    "flux": null,
-   "couleur": "orange"
+   "couleur": "bleu"
   },
   {
    "de": "carrefour",
@@ -503,6 +710,15 @@
    "source": "GreenYellow, 2024",
    "flux": null,
    "couleur": "bleu"
+  },
+  {
+   "de": "carrefour_property",
+   "vers": "supr",
+   "verbe": "CÉDER",
+   "detail": "78 magasins, Carrefour reste locataire",
+   "source": "SUPR, 2025 ; Carrefour, 2026",
+   "flux": null,
+   "couleur": "orange"
   },
   {
    "de": "casino",
@@ -535,7 +751,7 @@
   },
   {
    "de": "casino",
-   "vers": "leclerc",
+   "vers": "adherents_leclerc",
    "verbe": "CÉDER",
    "detail": "7 hypers en 2019",
    "source": "Casino, 2019",
@@ -652,13 +868,49 @@
    "couleur": "bleu"
   },
   {
+   "de": "leclerc",
+   "vers": "acdlec",
+   "verbe": "FÉDÉRER",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "leclerc",
+   "vers": "galec",
+   "verbe": "FÉDÉRER",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
    "de": "mercialys",
-   "vers": "leclerc",
+   "vers": "adherents_leclerc",
    "verbe": "LOUER",
    "detail": "Brest",
    "source": "Mercialys, 2025",
    "flux": null,
    "couleur": "orange"
+  },
+  {
+   "de": "mousquetaires",
+   "vers": "chabrieres",
+   "verbe": "DÉTENIR",
+   "detail": "≈ 50 % des surfaces au collectif",
+   "source": "LSA, s.d.",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "mousquetaires",
+   "vers": "immo_europeenne",
+   "verbe": "DÉTENIR",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
   },
   {
    "de": "mousquetaires",
@@ -688,6 +940,15 @@
    "couleur": "bleu"
   },
   {
+   "de": "mulliez",
+   "vers": "nhood",
+   "verbe": "DÉTENIR",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
    "de": "nexity",
    "vers": "villes_commerces",
    "verbe": "DÉTENIR",
@@ -703,6 +964,15 @@
    "verbe": "TRANSFORMER",
    "detail": "≈ 400 logements",
    "source": "Presse Agence, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "nhood",
+   "vers": "chaire_essec",
+   "verbe": "CHERCHER",
+   "detail": null,
+   "source": "ESSEC, s.d.",
    "flux": null,
    "couleur": "bleu"
   },
@@ -784,6 +1054,8 @@
     "mulliez",
     "auchan",
     "ceetrus",
+    "nhood",
+    "chaire_essec",
     "cap8000",
     "regenimo",
     "bdt"
@@ -793,6 +1065,8 @@
    "centre": "carrefour",
    "noeuds": [
     "carrefour",
+    "carrefour_property",
+    "immo_carrefour",
     "carmila",
     "villes_commerces",
     "nexity",
@@ -804,6 +1078,9 @@
    "centre": "mousquetaires",
    "noeuds": [
     "mousquetaires",
+    "adherents_mousq",
+    "chabrieres",
+    "immo_europeenne",
     "immo_mousq",
     "villeneuve_loubet",
     "nexity",
@@ -815,6 +1092,9 @@
    "centre": "leclerc",
    "noeuds": [
     "leclerc",
+    "acdlec",
+    "galec",
+    "adherents_leclerc",
     "casino",
     "mercialys"
    ]

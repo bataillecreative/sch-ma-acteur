@@ -13,7 +13,8 @@ logo: image29.png          # fichier du dossier logos/, ou null
 statut: privé              # public | véhicule | privé  → rangée du graphe
 régime: bascule            # féodal | hybride | bascule | financier | public → colonne du graphe
 légende: cède pour se désendetter
-galaxie: Casino         # facultatif : groupe d'appartenance, dessiné comme un halo sur le site
+galaxie: Groupe Caisse des Dépôts   # facultatif : groupe d'appartenance, dessiné comme un halo
+tête: true                # facultatif : tête du groupe, dessinée plus grande
 connexions:
 - CÉDER icade : 10 sites {39 M€} (Icade et Casino, 2025)
 ---
@@ -23,6 +24,12 @@ connexions:
 
 Même en-tête, avec `type: programme` et `catégorie` : politique publique, véhicule commun,
 programme d'enseigne, offre, opération. Pas de logo.
+
+## Code des formes (site)
+
+- cercle : entreprise privée ; carré : acteur public ; rectangle : véhicule commun (partenariat) ;
+  pilule pointillée : programme, politique publique, opération, offre.
+- Les têtes de groupe (`tête: true`) sont dessinées plus grandes ; leur galaxie est entourée d'un halo.
 
 ## Connexions
 

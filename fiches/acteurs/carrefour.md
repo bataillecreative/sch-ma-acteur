@@ -3,14 +3,16 @@ type: acteur
 id: carrefour
 nom: Carrefour
 galaxie: Carrefour
+tête: true
 logo: image25.png
 statut: privé
 régime: bascule
 légende: enseigne
 connexions:
-- 'DÉTENIR villes_commerces : 80 % (Carrefour et Nexity, 2023)'
+- 'DÉTENIR carrefour_property : filiale'
+- 'DÉTENIR immo_carrefour : filiale'
 - 'DÉTENIR carmila : ≈ 30 % (Carmila, 2026)'
-- 'CÉDER supr : 78 magasins, Carrefour reste locataire (SUPR, 2025 ; Carrefour, 2026)'
+- 'DÉTENIR villes_commerces : 80 % (Carrefour et Nexity, 2023)'
 - 'SOLARISER greenyellow : 350 parkings, 20 ans (GreenYellow, 2024)'
 nom_sous_logo: true
 ---

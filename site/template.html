@@ -20,6 +20,7 @@
   --papier: #FFFFFF;
   --fond: #F6F6FA;
   --plaque: transparent;
+  --forme: #F1F1FE;
   --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --texte: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   color-scheme: light;
@@ -27,12 +28,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bleu: #8E8CFF; --orange: #FF8156; --argent: #3CCB95; --encre: #ECECF3; --gris: #A3A3B2;
-    --filet: #34343F; --papier: #16161C; --fond: #0F0F14; --plaque: #FFFFFF; color-scheme: dark;
+    --filet: #34343F; --papier: #16161C; --fond: #0F0F14; --plaque: #FFFFFF; --forme: #F4F4FA; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bleu: #8E8CFF; --orange: #FF8156; --argent: #3CCB95; --encre: #ECECF3; --gris: #A3A3B2;
-  --filet: #34343F; --papier: #16161C; --fond: #0F0F14; --plaque: #FFFFFF; color-scheme: dark;
+  --filet: #34343F; --papier: #16161C; --fond: #0F0F14; --plaque: #FFFFFF; --forme: #F4F4FA; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
@@ -56,8 +57,11 @@ main { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 360px; 
 aside { background: var(--papier); border-left: 1px solid var(--filet); padding: 20px 22px 28px; overflow-y: auto; }
 .legende { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--gris); margin-left: auto; }
 .legende span { display: inline-flex; align-items: center; gap: 6px; }
+.legende svg { flex: none; }
 .legende i { display: inline-block; width: 18px; height: 2px; }
 .legende b { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--argent); }
+.cote { position: absolute; top: 12px; font: 600 11px var(--texte); letter-spacing: .14em; color: var(--gris); pointer-events: none; }
+.cote.g { left: 16px; } .cote.d { right: 16px; }
 .bulle { position: absolute; pointer-events: none; background: var(--papier); border: 1px solid var(--filet); border-radius: 8px; padding: 8px 10px; font-size: 13px; max-width: 300px; box-shadow: 0 6px 20px rgb(0 0 0 / .12); opacity: 0; transition: opacity .12s; }
 .bulle .v { font-weight: 600; letter-spacing: .06em; font-size: 11.5px; }
 .bulle .s { color: var(--gris); font-size: 12px; margin-top: 2px; }
@@ -89,8 +93,18 @@ aside { background: var(--papier); border-left: 1px solid var(--filet); padding:
 .etiq .detail { font: 400 11px var(--texte); fill: var(--gris); }
 .etiq .flux { font: 700 11.5px var(--texte); fill: var(--argent); }
 .particule { fill: var(--argent); pointer-events: none; }
+.forme { fill: var(--forme); stroke: var(--bleu); stroke-width: 1.3; }
+.forme.orange { stroke: var(--orange); }
+.forme.grand { stroke-width: 2.6; }
+.forme.carre { stroke: var(--encre); stroke-width: 1.4; }
+.forme.carre.grand { stroke-width: 2.6; }
+.forme.rect { fill: var(--papier); stroke: var(--encre); stroke-width: 1.2; }
+.forme.pilule { fill: var(--papier); stroke: var(--gris); stroke-width: 1.1; stroke-dasharray: 4 3; }
+.mono { font: 700 15px var(--display); fill: #2B2A8F; }
+.mono.grand { font-size: 22px; }
+.nom.tete { font-family: var(--display); font-weight: 700; }
 .halo { fill: color-mix(in srgb, var(--bleu) 6%, transparent); stroke: color-mix(in srgb, var(--bleu) 30%, transparent); stroke-width: 1; stroke-dasharray: 3 4; }
-.halo-nom { font: 600 10.5px var(--texte); letter-spacing: .12em; fill: color-mix(in srgb, var(--bleu) 70%, var(--gris)); }
+.halo-nom { font: 700 12px var(--display); letter-spacing: .12em; fill: color-mix(in srgb, var(--bleu) 70%, var(--gris)); }
 .estompe { opacity: .14; transition: opacity .15s; }
 /* fiche */
 .fiche-vide { color: var(--gris); }
@@ -146,6 +160,10 @@ footer { padding: 8px 24px 12px; color: var(--gris); font-size: 12px; border-top
     <label><input type="checkbox" id="b-prog" checked> Programmes</label>
   </div>
   <div class="legende" aria-hidden="true">
+    <span><svg width="14" height="14"><circle cx="7" cy="7" r="6" fill="var(--forme)" stroke="var(--bleu)"/></svg>entreprise</span>
+    <span><svg width="14" height="14"><rect x="1" y="1" width="12" height="12" rx="2" fill="var(--forme)" stroke="var(--encre)"/></svg>acteur public</span>
+    <span><svg width="22" height="14"><rect x="1" y="2" width="20" height="10" rx="1" fill="none" stroke="var(--encre)"/></svg>partenariat</span>
+    <span><svg width="22" height="14"><rect x="1" y="2" width="20" height="10" rx="5" fill="none" stroke="var(--gris)" stroke-dasharray="3 2"/></svg>programme</span>
     <span><i style="background:var(--bleu)"></i>tenir, financer, transformer</span>
     <span><i style="background:var(--orange)"></i>céder, se retirer, louer, reprendre</span>
     <span><b></b>argent, dans le sens où il circule</span>
@@ -154,6 +172,8 @@ footer { padding: 8px 24px 12px; color: var(--gris); font-size: 12px; border-top
 <main>
   <div id="scene">
     <svg id="graphe" viewBox="0 0 1200 720" role="img" aria-label="Graphe des acteurs et de leurs liens"></svg>
+    <div class="cote g" aria-hidden="true">← PRIVÉ</div>
+    <div class="cote d" aria-hidden="true">PUBLIC →</div>
     <div class="bulle" id="bulle"></div>
   </div>
   <aside id="fiche" aria-live="polite"></aside>
@@ -213,24 +233,31 @@ function liensVue(ids) {
   });
 }
 
+function forme(n) {
+  if (n.statut === "vehicule") return "rect";
+  if (n.type === "programme") return "pilule";
+  if (n.statut === "public") return "carre";
+  return "cercle";
+}
+function initiales(nom) {
+  if (/^\d/.test(nom)) return nom.split(" ")[0];
+  const mots = nom.replace(/[’']/g, " ").split(/[\s·–-]+/).filter(m => m && !/^(de|des|du|la|le|les|l|d|et|en)$/i.test(m) && !/^\(/.test(m));
+  return mots.slice(0, 3).map(m => m[0].toUpperCase()).join("");
+}
 function taille(n, centre) {
-  if (n.type === "programme") {
-    const lignes = coupe(n.nom, 24);
-    const w = Math.max(...lignes.map(l => largeurTexte(l, 14, 0.52)), largeurTexte((n.categorie || "").toUpperCase(), 9.5, 0.72));
-    return { w, h: 20 + lignes.length * 17, lignes };
+  const f = forme(n), grand = !!(n.tete || centre);
+  const lab = n.type === "programme" ? (n.categorie || "").toUpperCase() : (n.regime && n.regime !== "public" ? REG[n.regime] : (n.role || "").toUpperCase());
+  if (f === "rect" || f === "pilule") {
+    const lignes = coupe(n.nom, 22);
+    const w = Math.max(...lignes.map(l => largeurTexte(l, 13.5, 0.52)), largeurTexte(lab, 9, 0.72)) + 28;
+    const h = 20 + lignes.length * 16;
+    return { f, w, h, sw: w, sh: h, sy: 0, lignes, lab, grand };
   }
-  const lab = n.regime && n.regime !== "public" ? REG[n.regime] : (n.role || "").toUpperCase();
-  const capW = largeurTexte(lab, 9.5, 0.72);
-  const logo = n.logo && D.logos[n.logo];
-  if (logo) {
-    let h = centre ? 52 : (logo.ratio < 1.6 ? 40 : 30), w = h * logo.ratio;
-    const max = centre ? 140 : 112;
-    if (w > max) { w = max; h = w / logo.ratio; }
-    const sous = n.nom_sous_logo ? 17 : 0;
-    return { w: Math.max(w, capW, sous ? largeurTexte(n.nom, 13, 0.55) : 0), h: h + sous + (lab ? 18 : 4), lw: w, lh: h, lab, sous };
-  }
-  const fs = centre ? 19 : 15;
-  return { w: Math.max(largeurTexte(n.nom, fs, centre ? 0.58 : 0.55), capW), h: fs + (lab ? 20 : 6), lab, fs };
+  const Dm = grand ? 86 : 62, nomFs = grand ? 15 : 12.5;
+  const lignesNom = coupe(n.nom, grand ? 26 : 22);
+  const nomW = Math.max(...lignesNom.map(l => largeurTexte(l, nomFs, grand ? 0.6 : 0.56)));
+  const h = Dm + 10 + lignesNom.length * (nomFs + 3) + (lab ? 13 : 0);
+  return { f, w: Math.max(Dm, nomW, largeurTexte(lab, 9, 0.72)), h, sw: Dm, sh: Dm, sy: -h / 2 + Dm / 2, lignesNom, nomFs, lab, grand };
 }
 
 function collision(pad) {
@@ -249,10 +276,12 @@ function collision(pad) {
   return force;
 }
 function bord(a, b) {
-  const dx = b.x - a.x, dy = b.y - a.y;
-  const hw = a.t.w / 2 + 8, hh = a.t.h / 2 + 7;
+  const ax = a.x, ay = a.y + a.t.sy, bx = b.x, by = b.y + b.t.sy;
+  const dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy) || 1;
+  if (a.t.f === "cercle") { const r = a.t.sw / 2 + 7; return [ax + dx / len * r, ay + dy / len * r]; }
+  const hw = a.t.sw / 2 + 7, hh = a.t.sh / 2 + 7;
   const k = Math.min(hw / Math.abs(dx || 1e-6), hh / Math.abs(dy || 1e-6));
-  return [a.x + dx * Math.min(k, 1), a.y + dy * Math.min(k, 1)];
+  return [ax + dx * Math.min(k, 1), ay + dy * Math.min(k, 1)];
 }
 function geometrie(l) {
   const a = l.source, b = l.target;
@@ -348,22 +377,28 @@ function dessiner() {
     .attr("x", d => -d.t.w / 2 - 8).attr("y", d => -d.t.h / 2 - 6).attr("width", d => d.t.w + 16).attr("height", d => d.t.h + 12);
   noeudSel.each(function (d) {
     const g = d3.select(this), n = d.n, t = d.t, top = -t.h / 2;
-    if (n.type === "programme") {
-      t.lignes.forEach((l, k) => g.append("text").attr("class", "prog").attr("text-anchor", "middle").attr("y", top + 14 + k * 17).text(l));
-      g.append("text").attr("class", "cap categorie").attr("text-anchor", "middle").attr("y", top + 14 + t.lignes.length * 17).text((n.categorie || "").toUpperCase());
+    const coul = n.regime === "bascule" ? " orange" : "";
+    if (t.f === "rect" || t.f === "pilule") {
+      g.append("rect").attr("class", "forme " + t.f).attr("x", -t.w / 2).attr("y", -t.h / 2).attr("width", t.w).attr("height", t.h).attr("rx", t.f === "pilule" ? t.h / 2 : 3);
+      t.lignes.forEach((l, k) => g.append("text").attr("class", "prog").attr("text-anchor", "middle").attr("y", top + 16 + k * 16).text(l));
+      g.append("text").attr("class", "cap categorie").attr("text-anchor", "middle").attr("y", top + 15 + t.lignes.length * 16).text(t.lab);
       return;
     }
+    const cy = t.sy, R = t.sw / 2;
+    if (t.f === "cercle") g.append("circle").attr("class", "forme cercle" + coul + (t.grand ? " grand" : "")).attr("cy", cy).attr("r", R);
+    else g.append("rect").attr("class", "forme carre" + (t.grand ? " grand" : "")).attr("x", -R).attr("y", cy - R).attr("width", 2 * R).attr("height", 2 * R).attr("rx", 7);
     const logo = n.logo && D.logos[n.logo];
-    let y = top;
     if (logo) {
-      g.append("rect").attr("class", "plaque").attr("x", -t.lw / 2 - 4).attr("y", y - 3).attr("width", t.lw + 8).attr("height", t.lh + 6).attr("rx", 5);
-      g.append("image").attr("href", logo.src).attr("x", -t.lw / 2).attr("y", y).attr("width", t.lw).attr("height", t.lh);
-      y += t.lh + 14;
-      if (t.sous) { g.append("text").attr("class", "nom").style("font-size", "13px").attr("text-anchor", "middle").attr("y", y + 1).text(n.nom); y += 16; }
+      const kw = t.f === "carre" ? 1.62 : 1.5, kh = t.f === "carre" ? 1.3 : 1.05;
+      let lw = R * kw, lh = lw / logo.ratio;
+      if (lh > R * kh) { lh = R * kh; lw = lh * logo.ratio; }
+      g.append("image").attr("href", logo.src).attr("x", -lw / 2).attr("y", cy - lh / 2).attr("width", lw).attr("height", lh);
     } else {
-      g.append("text").attr("class", "nom" + (d.id === centre ? " centre" : "")).attr("text-anchor", "middle").attr("y", y + t.fs * 0.85).text(n.nom);
-      y += t.fs + 14;
+      g.append("text").attr("class", "mono" + (t.grand ? " grand" : "")).attr("text-anchor", "middle").attr("y", cy + (t.grand ? 8 : 5)).text(initiales(n.nom));
     }
+    let y = cy + R + 8 + t.nomFs;
+    t.lignesNom.forEach((l, k) => g.append("text").attr("class", "nom" + (t.grand ? " tete" : "")).style("font-size", t.nomFs + "px").attr("text-anchor", "middle").attr("y", y + k * (t.nomFs + 3)).text(l));
+    y += (t.lignesNom.length - 1) * (t.nomFs + 3) + 13;
     if (t.lab) g.append("text").attr("class", "cap " + (n.regime === "bascule" ? "bascule" : n.regime ? "" : "role")).attr("text-anchor", "middle").attr("y", y).text(t.lab);
   });
 
@@ -398,12 +433,12 @@ function dessiner() {
     sim = d3.forceSimulation(nodes)
       .force("lien", d3.forceLink(liens).id(d => d.id).distance(d => (nodes.length < 12 ? 190 : 120) + (d.source.t.w + d.target.t.w) / 4).strength(0.35))
       .force("charge", d3.forceManyBody().strength(nodes.length < 12 ? -1100 : -420))
-      .force("x", d3.forceX(W / 2).strength(0.04))
+      .force("x", d3.forceX(d => d.n.statut === "public" ? W * 0.8 : d.n.statut === "vehicule" ? W * 0.5 : W * 0.22).strength(d => d.n.statut === "vehicule" ? 0.05 : 0.11))
       .force("y", d3.forceY(360).strength(0.07))
       .force("col", collision(18))
       .force("galaxie", alpha => {
         const c = d3.rollup(nodes.filter(d => d.n.galaxie), g => [d3.mean(g, d => d.x), d3.mean(g, d => d.y)], d => d.n.galaxie);
-        nodes.forEach(d => { if (!d.n.galaxie) return; const [cx, cy] = c.get(d.n.galaxie); d.vx += (cx - d.x) * 0.12 * alpha; d.vy += (cy - d.y) * 0.12 * alpha; });
+        nodes.forEach(d => { if (!d.n.galaxie) return; const [cx, cy] = c.get(d.n.galaxie); d.vx += (cx - d.x) * 0.2 * alpha; d.vy += (cy - d.y) * 0.2 * alpha; });
         // chaque galaxie repousse ce qui ne lui appartient pas
         galaxies.forEach(([k, g]) => {
           const [cx, cy] = c.get(k);
@@ -411,7 +446,7 @@ function dessiner() {
           nodes.forEach(d => {
             if (d.n.galaxie === k) return;
             const dx = d.x - cx, dy = d.y - cy, dist = Math.hypot(dx, dy) || 1, lim = r + Math.max(d.t.w, d.t.h) / 2;
-            if (dist < lim) { const f = (lim - dist) / dist * 0.25 * alpha * 4; d.vx += dx * f; d.vy += dy * f; }
+            if (dist < lim) { const f = (lim - dist) / dist * 0.5 * alpha * 4; d.vx += dx * f; d.vy += dy * f; }
           });
         });
       })
@@ -586,7 +621,7 @@ function ficheVide() {
   const c = byId.get(centreVue(vue));
   document.getElementById("fiche").innerHTML = `<div class="fiche-vide"><h3>Vue</h3><h2>${esc(v)}</h2>
     <p>${etat.nodes.length} acteurs et programmes, ${etat.liens.length} liens. Au centre : ${esc(c.nom)}.</p>
-    <p>${dispo === "libre" ? "Disposition libre : chaque groupe forme une galaxie (halo pointillé) ; les véhicules communs flottent entre les galaxies qu'ils relient. Déplacez les acteurs à la souris, zoomez à la molette." : "Par régime : à gauche les acteurs féodaux, propriétaires de leur domaine ; à droite les acteurs financiers, qui détiennent le foncier comme un actif ; au milieu les véhicules communs, lieux du partenariat public-privé."}</p>
+    <p>${dispo === "libre" ? "Disposition libre : le privé à gauche, le public à droite ; chaque groupe forme une galaxie (halo pointillé) et les véhicules communs flottent au milieu, entre les galaxies qu'ils relient. Déplacez les acteurs à la souris, zoomez à la molette." : "Par régime : à gauche les acteurs féodaux, propriétaires de leur domaine ; à droite les acteurs financiers, qui détiennent le foncier comme un actif ; au milieu les véhicules communs, lieux du partenariat public-privé."}</p>
     <p>Cliquez un acteur ou un programme pour ouvrir sa fiche.</p></div>`;
 }
 function changerVue(v) {
@@ -601,6 +636,7 @@ function changerVue(v) {
 document.querySelectorAll("#dispo button").forEach(b => b.addEventListener("click", () => {
   dispo = b.dataset.dispo;
   document.querySelectorAll("#dispo button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  document.querySelectorAll(".cote").forEach(c => c.style.display = dispo === "libre" ? "" : "none");
   dessiner(); if (choisi) ouvrirFiche(choisi); else ficheVide();
 }));
 const vb = document.getElementById("vues");

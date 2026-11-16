@@ -2,7 +2,8 @@
 type: acteur
 id: mulliez
 nom: Famille Mulliez (AFM)
-galaxie: Famille Mulliez
+galaxie: Association familiale Mulliez
+tête: true
 logo: null
 statut: privé
 régime: féodal
@@ -10,6 +11,7 @@ légende: patrimoine géré en famille
 connexions:
 - EXPLOITER auchan
 - DÉTENIR ceetrus (New Immo Holding, 2025)
+- DÉTENIR nhood
 ---
 
 # Famille Mulliez (AFM)

@@ -3,11 +3,14 @@ type: acteur
 id: mousquetaires
 nom: Les Mousquetaires
 galaxie: Les Mousquetaires
+tête: true
 logo: null
 statut: privé
 régime: hybride
 légende: ≈ 50 % adhérents, ≈ 50 % groupement
 connexions:
+- 'DÉTENIR chabrieres : ≈ 50 % des surfaces au collectif (LSA, s.d.)'
+- DÉTENIR immo_europeenne
 - DÉVELOPPER immo_mousq (LSA, s.d.)
 ---
 

@@ -5,7 +5,12 @@ nom: E.Leclerc
 logo: null
 statut: privé
 régime: féodal
-légende: 579 adhérents propriétaires de leurs murs
+légende: mouvement d'indépendants
+galaxie: Groupe Leclerc
+tête: true
+connexions:
+- FÉDÉRER acdlec
+- FÉDÉRER galec
 ---
 
 # E.Leclerc

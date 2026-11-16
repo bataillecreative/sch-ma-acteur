@@ -3,6 +3,7 @@ type: acteur
 id: etat
 nom: État · ANCT
 galaxie: État
+tête: true
 logo: null
 statut: public
 régime: public
