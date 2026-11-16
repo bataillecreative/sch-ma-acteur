@@ -47,10 +47,10 @@ def compiler():
     orange, inverse = set(V["orange"]), set(V.get("flux_inverse", []))
     noeuds, liens = [], []
     for p in sorted(glob.glob(os.path.join(HERE, "fiches", "*", "*.md"))):
-        fm, _ = lire(p)
-        noeuds.append({"id": fm["id"], "nom": fm["nom"], "type": fm.get("type", "acteur"), "categorie": fm.get("catégorie"),
+        fm, corps = lire(p)
+        noeuds.append({"texte": corps.strip(), "id": fm["id"], "nom": fm["nom"], "type": fm.get("type", "acteur"), "categorie": fm.get("catégorie"),
                        "logo": fm.get("logo"), "statut": STAT[fm["statut"]],
-                       "regime": REG[fm.get("régime")], "legende": fm.get("légende", "")})
+                       "regime": REG[fm.get("régime")], "role": fm.get("rôle"), "legende": fm.get("légende", "")})
         for s in fm.get("connexions") or []:
             l = connexion(fm["id"], s)
             l["couleur"] = "orange" if l["verbe"] in orange else "bleu"

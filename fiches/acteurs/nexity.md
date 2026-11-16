@@ -5,6 +5,7 @@ nom: Nexity
 logo: image30.png
 statut: privé
 régime: null
+rôle: opérateur privé
 légende: promoteur
 connexions:
 - 'DÉTENIR villes_commerces : 20 % {39 M€} (Carrefour et Nexity, 2023)'

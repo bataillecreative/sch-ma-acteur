@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Système d'acteurs des entrées de ville</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Charte Vertical Sea : bleu d'action, orange de cession, encre, gris de légende, papier ; vert réservé à l'argent.
+     Mise en page : le graphe occupe l'écran, la fiche de l'acteur choisi s'ouvre à droite. */
+  --bleu: #3B38F5;
+  --orange: #FF5B23;
+  --argent: #0E9F6E;
+  --encre: #202125;
+  --gris: #686870;
+  --filet: #D9D9E3;
+  --papier: #FFFFFF;
+  --fond: #F6F6FA;
+  --plaque: transparent;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --texte: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bleu: #8E8CFF; --orange: #FF8156; --argent: #3CCB95; --encre: #ECECF3; --gris: #A3A3B2;
+    --filet: #34343F; --papier: #16161C; --fond: #0F0F14; --plaque: #FFFFFF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bleu: #8E8CFF; --orange: #FF8156; --argent: #3CCB95; --encre: #ECECF3; --gris: #A3A3B2;
+  --filet: #34343F; --papier: #16161C; --fond: #0F0F14; --plaque: #FFFFFF; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--fond); color: var(--encre); font-family: var(--texte); font-size: 15px; line-height: 1.5; display: flex; flex-direction: column; }
+header { padding: 18px 24px 10px; display: grid; gap: 4px; }
+h1 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.15; margin: 0; color: var(--bleu); text-wrap: balance; }
+.lede { margin: 0; color: var(--gris); max-width: 72ch; }
+.barre { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; padding: 6px 24px 10px; }
+.vues { display: flex; flex-wrap: wrap; gap: 6px; }
+.vues button, .bascules label { font: 500 13px var(--texte); }
+.vues button { border: 1px solid var(--filet); background: var(--papier); color: var(--encre); padding: 5px 11px; border-radius: 999px; cursor: pointer; }
+.vues button:hover { border-color: var(--bleu); }
+.vues button[aria-pressed="true"] { background: var(--bleu); border-color: var(--bleu); color: #fff; }
+.bascules { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--gris); }
+.bascules label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.bascules input { accent-color: var(--bleu); }
+button:focus-visible, input:focus-visible, .lien-fiche:focus-visible { outline: 2px solid var(--bleu); outline-offset: 2px; }
+main { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 360px; gap: 0; border-top: 1px solid var(--filet); }
+#scene { position: relative; min-height: 520px; background: var(--papier); overflow: hidden; }
+#scene svg { width: 100%; height: 100%; display: block; }
+aside { background: var(--papier); border-left: 1px solid var(--filet); padding: 20px 22px 28px; overflow-y: auto; }
+.legende { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--gris); margin-left: auto; }
+.legende span { display: inline-flex; align-items: center; gap: 6px; }
+.legende i { display: inline-block; width: 18px; height: 2px; }
+.legende b { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--argent); }
+.bulle { position: absolute; pointer-events: none; background: var(--papier); border: 1px solid var(--filet); border-radius: 8px; padding: 8px 10px; font-size: 13px; max-width: 300px; box-shadow: 0 6px 20px rgb(0 0 0 / .12); opacity: 0; transition: opacity .12s; }
+.bulle .v { font-weight: 600; letter-spacing: .06em; font-size: 11.5px; }
+.bulle .s { color: var(--gris); font-size: 12px; margin-top: 2px; }
+/* nœuds */
+.noeud { cursor: pointer; }
+.noeud .plaque { fill: var(--plaque); }
+.noeud text { fill: var(--encre); }
+.nom { font: 600 15px var(--texte); }
+.nom.centre { font: 700 19px var(--display); }
+.prog { font: italic 500 14px var(--texte); }
+.cap { font: 600 9.5px var(--texte); letter-spacing: .1em; }
+.noeud .cap { fill: var(--bleu); }
+.noeud .cap.bascule { fill: var(--orange); }
+.noeud .cap.categorie, .noeud .cap.role { fill: var(--gris); }
+.noeud .cible { fill: transparent; }
+.noeud.choisi .cible { fill: color-mix(in srgb, var(--bleu) 9%, transparent); stroke: var(--bleu); stroke-width: 1; }
+.bande { font: 600 10.5px var(--texte); letter-spacing: .14em; fill: var(--gris); }
+.axe { font: 600 10.5px var(--texte); letter-spacing: .14em; fill: var(--gris); }
+.trame { stroke: var(--filet); stroke-width: 1; }
+/* liens */
+.lien { fill: none; stroke-linecap: round; }
+.lien.bleu { stroke: var(--bleu); }
+.lien.orange { stroke: var(--orange); }
+.lien-zone { fill: none; stroke: transparent; stroke-width: 14; cursor: help; }
+.etiq { pointer-events: none; paint-order: stroke; stroke: var(--papier); stroke-width: 5px; stroke-linejoin: round; }
+.etiq .verbe { font: 600 9.5px var(--texte); letter-spacing: .08em; }
+.etiq .verbe.bleu { fill: var(--bleu); }
+.etiq .verbe.orange { fill: var(--orange); }
+.etiq .detail { font: 400 11px var(--texte); fill: var(--gris); }
+.etiq .flux { font: 700 11.5px var(--texte); fill: var(--argent); }
+.particule { fill: var(--argent); pointer-events: none; }
+.estompe { opacity: .14; transition: opacity .15s; }
+/* fiche */
+.fiche-vide { color: var(--gris); }
+.fiche-vide h2 { color: var(--encre); }
+aside h2 { font-family: var(--display); font-weight: 700; font-size: 22px; margin: 6px 0 4px; line-height: 1.2; text-wrap: balance; }
+aside h3 { font: 600 11px var(--texte); letter-spacing: .12em; text-transform: uppercase; color: var(--gris); margin: 20px 0 6px; }
+.logo-fiche { max-width: 160px; max-height: 54px; background: var(--plaque); padding: 4px; border-radius: 6px; }
+.puces { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+.puce { font: 600 10.5px var(--texte); letter-spacing: .08em; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--filet); color: var(--gris); }
+.puce.r { color: var(--bleu); border-color: color-mix(in srgb, var(--bleu) 40%, transparent); }
+.puce.r.bascule { color: var(--orange); border-color: color-mix(in srgb, var(--orange) 40%, transparent); }
+.leg { color: var(--gris); margin: 0 0 6px; }
+.corps ul { padding-left: 18px; margin: 4px 0; }
+.corps li { margin: 3px 0; }
+.corps p { margin: 6px 0; }
+.connexions { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.connexions li { border-left: 2px solid var(--filet); padding: 2px 0 2px 10px; }
+.connexions li.orange { border-color: var(--orange); }
+.connexions li.bleu { border-color: var(--bleu); }
+.connexions .v { font-weight: 600; letter-spacing: .06em; font-size: 11.5px; }
+.connexions .v.orange { color: var(--orange); }
+.connexions .v.bleu { color: var(--bleu); }
+.connexions .src { color: var(--gris); font-size: 12px; }
+.connexions .argent { color: var(--argent); font-weight: 700; }
+.lien-fiche { background: none; border: 0; padding: 0; font: inherit; color: var(--encre); text-decoration: underline; text-decoration-color: var(--filet); text-underline-offset: 3px; cursor: pointer; }
+.lien-fiche:hover { text-decoration-color: var(--bleu); }
+.ouvrir-vue { margin-top: 14px; font: 500 13px var(--texte); border: 1px solid var(--bleu); color: var(--bleu); background: none; padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+footer { padding: 8px 24px 12px; color: var(--gris); font-size: 12px; border-top: 1px solid var(--filet); background: var(--fond); }
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+  #scene { min-height: 460px; height: 62vh; }
+  aside { border-left: 0; border-top: 1px solid var(--filet); }
+  h1 { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .estompe, .bulle { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Le système d'acteurs des entrées de ville</h1>
+  <p class="lede">Du régime féodal au régime financier : qui tient le sol, qui finance, qui transforme. Choisissez une vue, survolez un lien pour sa source, cliquez un acteur pour ouvrir sa fiche.</p>
+</header>
+<div class="barre">
+  <div class="vues" id="vues" role="group" aria-label="Vue du graphe"></div>
+  <div class="vues" id="dispo" role="group" aria-label="Disposition">
+    <button type="button" data-dispo="libre" aria-pressed="true">Libre</button>
+    <button type="button" data-dispo="grille" aria-pressed="false">Par régime</button>
+  </div>
+  <div class="bascules">
+    <label><input type="checkbox" id="b-flux" checked> Flux financiers</label>
+    <label><input type="checkbox" id="b-etiq" checked> Étiquettes des liens</label>
+    <label><input type="checkbox" id="b-cessions" checked> Cessions entre privés</label>
+    <label><input type="checkbox" id="b-prog" checked> Programmes</label>
+  </div>
+  <div class="legende" aria-hidden="true">
+    <span><i style="background:var(--bleu)"></i>tenir, financer, transformer</span>
+    <span><i style="background:var(--orange)"></i>céder, se retirer, louer, reprendre</span>
+    <span><b></b>argent, dans le sens où il circule</span>
+  </div>
+</div>
+<main>
+  <div id="scene">
+    <svg id="graphe" viewBox="0 0 1200 720" role="img" aria-label="Graphe des acteurs et de leurs liens"></svg>
+    <div class="bulle" id="bulle"></div>
+  </div>
+  <aside id="fiche" aria-live="polite"></aside>
+</main>
+<footer>Données : fiches acteurs et programmes du dépôt graphe-acteurs, état au 16/11/2026. Chaque lien porte sa source au format (Auteur, année). Disposition libre : les acteurs s'organisent selon leurs liens. Disposition par régime : colonne selon le régime, rangée selon le statut. Les acteurs se déplacent à la souris.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const D = /*__DATA__*/null;
+const W = 1200, H = 720;
+const byId = new Map(D.noeuds.map(n => [n.id, n]));
+const REG = { feodal: "FÉODAL", hybride: "HYBRIDE", bascule: "BASCULE", financier: "FINANCIER", public: "PUBLIC" };
+const STAT = { public: "Public", vehicule: "Partenariat", prive: "Privé" };
+const COLX = { feodal: 190, hybride: 455, bascule: 745, financier: 1030, public: 610 };
+const VUES = [["global", "Vue d'ensemble"], ["tout", "Galaxie complète"], ["leclerc", "Leclerc"], ["mulliez", "Mulliez"],
+  ["mousquetaires", "Mousquetaires"], ["carrefour", "Carrefour"], ["frey", "Frey"], ["icade_casino", "Icade–Casino"], ["public", "Action publique"]];
+const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const svg = d3.select("#graphe");
+const bulle = document.getElementById("bulle");
+let vue = "global", choisi = null, etat = null, dispo = "libre", sim = null;
+
+const nbsp = s => (s || "").replace(/ ([:;?!%»])/g, " $1").replace(/« /g, "« ").replace(/(\d) (\d{3})/g, "$1 $2").replace(/ (M€|Md€)/g, " $1");
+const esc = s => (s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function montant(s) {
+  if (!s) return null;
+  const m = s.replace(/ /g, " ").match(/(\d+(?:[.,]\d+)?)\s*(Md|M)€/);
+  if (!m) return null;
+  return parseFloat(m[1].replace(",", ".")) * (m[2] === "Md" ? 1000 : 1);
+}
+function coupe(s, max) {
+  if (s.length <= max) return [s];
+  const mots = s.split(" "); let a = "", lignes = [];
+  mots.forEach(m => { if ((a + " " + m).trim().length > max && a) { lignes.push(a); a = m; } else a = (a + " " + m).trim(); });
+  lignes.push(a); return lignes;
+}
+const largeurTexte = (s, px, k = 0.56) => s.length * px * k;
+function bandeY(n) {
+  const prog = n.type === "programme";
+  if (n.statut === "public") return prog ? 92 : 205;
+  if (n.statut === "vehicule") return 372;
+  return prog ? 640 : 540;
+}
+
+function noeudsVue(v) {
+  let ids = v === "tout" ? D.noeuds.map(n => n.id) : D.vues[v].noeuds.slice();
+  if (!document.getElementById("b-prog").checked) ids = ids.filter(id => byId.get(id).type !== "programme" || id === centreVue(v));
+  return ids;
+}
+const centreVue = v => v === "tout" ? "cdc" : D.vues[v].centre;
+function liensVue(ids) {
+  const s = new Set(ids);
+  const cessions = document.getElementById("b-cessions").checked;
+  return D.liens.filter(l => s.has(l.de) && s.has(l.vers)).filter(l => {
+    if (cessions || l.couleur !== "orange") return true;
+    const a = byId.get(l.de), b = byId.get(l.vers);
+    return !(a.statut === "prive" && b.statut === "prive" && a.type === "acteur" && b.type === "acteur");
+  });
+}
+
+function taille(n, centre) {
+  if (n.type === "programme") {
+    const lignes = coupe(n.nom, 24);
+    const w = Math.max(...lignes.map(l => largeurTexte(l, 14, 0.52)), largeurTexte((n.categorie || "").toUpperCase(), 9.5, 0.72));
+    return { w, h: 20 + lignes.length * 17, lignes };
+  }
+  const lab = n.regime && n.regime !== "public" ? REG[n.regime] : (n.role || "").toUpperCase();
+  const capW = largeurTexte(lab, 9.5, 0.72);
+  const logo = n.logo && D.logos[n.logo];
+  if (logo) {
+    let h = centre ? 52 : (logo.ratio < 1.6 ? 40 : 30), w = h * logo.ratio;
+    const max = centre ? 140 : 112;
+    if (w > max) { w = max; h = w / logo.ratio; }
+    return { w: Math.max(w, capW), h: h + (lab ? 18 : 4), lw: w, lh: h, lab };
+  }
+  const fs = centre ? 19 : 15;
+  return { w: Math.max(largeurTexte(n.nom, fs, centre ? 0.58 : 0.55), capW), h: fs + (lab ? 20 : 6), lab, fs };
+}
+
+function collision(pad) {
+  let nodes;
+  function force() {
+    for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+      const a = nodes[i], b = nodes[j], dx = b.x - a.x, dy = b.y - a.y;
+      const ox = (a.t.w + b.t.w) / 2 + pad - Math.abs(dx), oy = (a.t.h + b.t.h) / 2 + pad - Math.abs(dy);
+      if (ox > 0 && oy > 0) {
+        if (ox < oy * 1.6) { const s = (dx >= 0 ? 1 : -1) * ox * 0.5; if (a.fx == null) a.x -= s; if (b.fx == null) b.x += s; }
+        else { const s = (dy >= 0 ? 1 : -1) * oy * 0.5; if (a.fy == null) a.y -= s; if (b.fy == null) b.y += s; }
+      }
+    }
+  }
+  force.initialize = n => nodes = n;
+  return force;
+}
+function bord(a, b) {
+  const dx = b.x - a.x, dy = b.y - a.y;
+  const hw = a.t.w / 2 + 8, hh = a.t.h / 2 + 7;
+  const k = Math.min(hw / Math.abs(dx || 1e-6), hh / Math.abs(dy || 1e-6));
+  return [a.x + dx * Math.min(k, 1), a.y + dy * Math.min(k, 1)];
+}
+function geometrie(l) {
+  const a = l.source, b = l.target;
+  const [x1, y1] = bord(a, b), [x2, y2] = bord(b, a);
+  const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1;
+  const len = Math.hypot(dx, dy) || 1;
+  const c = (l.courbe || 0.1) * len;
+  const cx = mx - dy / len * c, cy = my + dx / len * c;
+  return { x1, y1, x2, y2, cx, cy };
+}
+const pointQ = (g, t) => [(1 - t) ** 2 * g.x1 + 2 * (1 - t) * t * g.cx + t * t * g.x2, (1 - t) ** 2 * g.y1 + 2 * (1 - t) * t * g.cy + t * t * g.y2];
+
+function dessiner() {
+  if (sim) { sim.stop(); sim = null; }
+  svg.selectAll("*").remove();
+  const centre = centreVue(vue);
+  const ids = noeudsVue(vue);
+  const liens = liensVue(ids).map(l => ({ ...l, source: l.de, target: l.vers }));
+  const voisins = new Map(ids.map(id => [id, new Set()]));
+  liens.forEach(l => { voisins.get(l.de).add(l.vers); voisins.get(l.vers).add(l.de); });
+  const nodes = ids.map((id, i) => {
+    const n = byId.get(id), t = taille(n, id === centre);
+    let tx = COLX[n.regime];
+    const libre = tx == null || n.statut === "vehicule";
+    if (libre) {
+      const xs = [...voisins.get(id)].map(v => COLX[byId.get(v).regime]).filter(x => x != null);
+      tx = xs.length ? d3.mean(xs) : 610;
+    }
+    const ty = bandeY(n);
+    return { id, n, t, tx, ty, libre, x: tx + ((i * 37) % 23) - 11, y: ty + ((i * 53) % 17) - 8 };
+  });
+  const paires = new Set(liens.map(l => l.de + ">" + l.vers));
+  liens.forEach(l => { l.courbe = paires.has(l.vers + ">" + l.de) ? 0.22 : 0.08; });
+
+  const parId = new Map(nodes.map(d => [d.id, d]));
+  liens.forEach(l => { l.source = parId.get(l.de); l.target = parId.get(l.vers); });
+  ranger(nodes, voisins, centre);
+  // trame : bandes et axe
+  const trame = svg.append("g").style("display", dispo === "grille" ? null : "none");
+  const NOMS = { public: "PUBLIC", vehicule: "PARTENARIAT", prive: "PRIVÉ" };
+  const parBande = d3.group(etatBandes, r => r.k.replace("-p", ""));
+  const bandes = [...parBande.entries()];
+  bandes.forEach(([k, rs], i) => {
+    trame.append("text").attr("class", "bande").attr("x", 18).attr("y", d3.mean(rs, r => r.y) + 4).text(NOMS[k]);
+    if (i < bandes.length - 1) {
+      const y = (d3.max(rs, r => r.y) + d3.min(bandes[i + 1][1], r => r.y)) / 2;
+      trame.append("line").attr("class", "trame").attr("x1", 18).attr("x2", W - 18).attr("y1", y).attr("y2", y).attr("stroke-dasharray", "2 5");
+    }
+  });
+  trame.append("line").attr("class", "trame").attr("x1", 120).attr("x2", W - 30).attr("y1", 692).attr("y2", 692);
+  Object.entries({ feodal: "FÉODAL", hybride: "HYBRIDE", bascule: "BASCULE", financier: "FINANCIER" }).forEach(([k, t]) => {
+    trame.append("text").attr("class", "axe").attr("x", COLX[k]).attr("y", 712).attr("text-anchor", "middle").text(t);
+  });
+
+  const defs = svg.append("defs");
+  ["bleu", "orange"].forEach(c => defs.append("marker").attr("id", "fl-" + c).attr("viewBox", "0 0 10 10").attr("refX", 8.5).attr("refY", 5)
+    .attr("markerUnits", "userSpaceOnUse").attr("markerWidth", 10).attr("markerHeight", 10).attr("orient", "auto-start-reverse")
+    .append("path").attr("d", "M1 1L9 5L1 9").attr("fill", "none").attr("stroke", c === "bleu" ? "var(--bleu)" : "var(--orange)").attr("stroke-width", 1.6).attr("stroke-linecap", "round"));
+
+  const zoneG = svg.append("g");
+  svg.call(d3.zoom().scaleExtent([0.4, 3]).filter(e => !e.button && e.type !== "dblclick").on("zoom", e => zoneG.attr("transform", e.transform)));
+  const gL = zoneG.append("g"), gP = zoneG.append("g"), gE = zoneG.append("g"), gN = zoneG.append("g");
+  const flux = document.getElementById("b-flux").checked;
+  const lienSel = gL.selectAll("g").data(liens).join("g");
+  lienSel.append("path").attr("class", d => "lien " + d.couleur).attr("marker-end", d => `url(#fl-${d.couleur})`)
+    .attr("stroke-width", d => flux && montant(d.flux) ? Math.min(1.6 + Math.sqrt(montant(d.flux)) * 0.18, 6) : 1.5);
+  lienSel.append("path").attr("class", "lien-zone")
+    .on("mousemove", (e, d) => montrerBulle(e, d)).on("mouseleave", cacherBulle);
+
+  const etiqOn = document.getElementById("b-etiq").checked;
+  const etiq = gE.selectAll("text").data(liens).join("text").attr("class", "etiq").attr("text-anchor", "middle")
+    .style("display", etiqOn ? null : "none");
+  etiq.append("tspan").attr("class", d => "verbe " + d.couleur).text(d => d.verbe);
+  etiq.append("tspan").attr("class", "detail").attr("dx", 5).text(d => d.detail && ids.length <= 12 ? nbsp(court(d.detail)) : "");
+  etiq.append("tspan").attr("class", "flux").attr("x", 0).attr("dy", 14).text(d => flux && d.flux ? nbsp(d.flux) : "");
+
+  const parts = [];
+  if (flux && !reduit) liens.filter(l => montant(l.flux)).forEach(l => { for (let k = 0; k < 3; k++) parts.push({ l, k }); });
+  const partSel = gP.selectAll("circle").data(parts).join("circle").attr("class", "particule").attr("r", 3.2);
+
+  const noeudSel = gN.selectAll("g").data(nodes).join("g").attr("class", d => "noeud" + (d.id === choisi ? " choisi" : ""))
+    .attr("tabindex", 0).attr("role", "button").attr("aria-label", d => "Fiche " + d.n.nom)
+    .on("click", (e, d) => { e.stopPropagation(); ouvrirFiche(d.id); })
+    .on("keydown", (e, d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ouvrirFiche(d.id); } })
+    .on("mouseenter", (e, d) => survoler(d.id)).on("mouseleave", () => survoler(null))
+    .call(d3.drag()
+      .on("start", (e, d) => { if (sim && !e.active) sim.alphaTarget(0.25).restart(); d.fx = d.x; d.fy = d.y; })
+      .on("drag", (e, d) => { d.fx = d.x = e.x; d.fy = d.y = e.y; if (!sim) placer(); })
+      .on("end", (e, d) => { if (sim) { if (!e.active) sim.alphaTarget(0); d.fx = d.fy = null; } }));
+  noeudSel.append("rect").attr("class", "cible").attr("rx", 8)
+    .attr("x", d => -d.t.w / 2 - 8).attr("y", d => -d.t.h / 2 - 6).attr("width", d => d.t.w + 16).attr("height", d => d.t.h + 12);
+  noeudSel.each(function (d) {
+    const g = d3.select(this), n = d.n, t = d.t, top = -t.h / 2;
+    if (n.type === "programme") {
+      t.lignes.forEach((l, k) => g.append("text").attr("class", "prog").attr("text-anchor", "middle").attr("y", top + 14 + k * 17).text(l));
+      g.append("text").attr("class", "cap categorie").attr("text-anchor", "middle").attr("y", top + 14 + t.lignes.length * 17).text((n.categorie || "").toUpperCase());
+      return;
+    }
+    const logo = n.logo && D.logos[n.logo];
+    let y = top;
+    if (logo) {
+      g.append("rect").attr("class", "plaque").attr("x", -t.lw / 2 - 4).attr("y", y - 3).attr("width", t.lw + 8).attr("height", t.lh + 6).attr("rx", 5);
+      g.append("image").attr("href", logo.src).attr("x", -t.lw / 2).attr("y", y).attr("width", t.lw).attr("height", t.lh);
+      y += t.lh + 14;
+    } else {
+      g.append("text").attr("class", "nom" + (d.id === centre ? " centre" : "")).attr("text-anchor", "middle").attr("y", y + t.fs * 0.85).text(n.nom);
+      y += t.fs + 14;
+    }
+    if (t.lab) g.append("text").attr("class", "cap " + (n.regime === "bascule" ? "bascule" : n.regime ? "" : "role")).attr("text-anchor", "middle").attr("y", y).text(t.lab);
+  });
+
+  function placer() {
+    borner(nodes);
+    noeudSel.attr("transform", d => `translate(${d.x},${d.y})`);
+    lienSel.each(function (d) {
+      d.g = geometrie(d);
+      const p = `M${d.g.x1},${d.g.y1} Q${d.g.cx},${d.g.cy} ${d.g.x2},${d.g.y2}`;
+      d3.select(this).selectAll("path").attr("d", p);
+    });
+    etiq.each(function (d) {
+      const [x, y] = pointQ(d.g, 0.5);
+      d3.select(this).attr("transform", `translate(${x},${y - 3})`);
+    });
+  }
+  placer();
+  if (dispo === "libre") {
+    sim = d3.forceSimulation(nodes)
+      .force("lien", d3.forceLink(liens).id(d => d.id).distance(d => (nodes.length < 12 ? 190 : 120) + (d.source.t.w + d.target.t.w) / 4).strength(0.35))
+      .force("charge", d3.forceManyBody().strength(nodes.length < 12 ? -1100 : -420))
+      .force("x", d3.forceX(W / 2).strength(0.04))
+      .force("y", d3.forceY(360).strength(0.07))
+      .force("col", collision(18))
+      .alpha(reduit ? 0 : 0.9).alphaDecay(0.035)
+      .on("tick", placer);
+    if (reduit) { for (let i = 0; i < 300; i++) sim.tick(); placer(); }
+  }
+
+  etat = { nodes, liens, noeudSel, lienSel, etiq, partSel, voisins };
+  survoler(null);
+  if (choisi && !ids.includes(choisi)) choisi = null;
+}
+function ranger(nodes, voisins, centre) {
+  const X0 = 120, X1 = W - 30, ORDRE = ["public-p", "public", "vehicule", "prive", "prive-p"];
+  const cle = d => d.n.statut === "vehicule" ? "vehicule" : d.n.statut + (d.n.type === "programme" ? "-p" : "");
+  const groupes = d3.group(nodes, cle);
+  const petit = nodes.length <= 12;
+  // 1. découpage en rangées
+  const rangees = [];
+  ORDRE.forEach(k => {
+    const g = groupes.get(k); if (!g) return;
+    const besoin = d3.sum(g, d => d.t.w) + 34 * (g.length - 1);
+    const deux = g.length > 2 && besoin > X1 - X0;
+    if (deux) {
+      const tri = g.slice().sort((a, b) => (a.tx - b.tx) || (a.id < b.id ? -1 : 1));
+      rangees.push({ k, g: tri.filter((d, i) => i % 2 === 0) }, { k, g: tri.filter((d, i) => i % 2 === 1) });
+    } else rangees.push({ k, g: g.slice() });
+  });
+  // 2. hauteur : rangées réparties sur la hauteur utile
+  const Y0 = 95, Y1 = 640, n = rangees.length;
+  const pas = n > 1 ? Math.min((Y1 - Y0) / (n - 1), 170) : 0;
+  const y0 = n > 1 ? (Y0 + Y1) / 2 - pas * (n - 1) / 2 : (Y0 + Y1) / 2;
+  rangees.forEach((r, i) => r.y = y0 + i * pas);
+  etatBandes = rangees;
+  // 3. largeur : chaque rangée dans l'ordre des régimes, sans chevauchement
+  const placerLigne = (ligne, y) => {
+    ligne.sort((a, b) => a.tx - b.tx || (a.id < b.id ? -1 : 1));
+    const c = ligne.findIndex(d => d.id === centre);
+    if (c >= 0) {
+      const eg = ligne.filter(d => d.tx === ligne[c].tx), reste = eg.filter(d => d.id !== centre), mil = Math.floor(reste.length / 2);
+      ligne.splice(ligne.indexOf(eg[0]), eg.length, ...reste.slice(0, mil), ligne[c], ...reste.slice(mil));
+    }
+    const libre = X1 - X0 - d3.sum(ligne, d => d.t.w);
+    const GAP = Math.max(34, Math.min(110, libre / Math.max(ligne.length, 1)));
+    const m = ligne.length;
+    ligne.forEach((d, i) => { d.x = petit ? 0.4 * d.tx + 0.6 * (X0 + (i + 0.5) * (X1 - X0) / m) : d.tx; d.y = y; });
+    for (let k = 1; k < ligne.length; k++) ligne[k].x = Math.max(ligne[k].x, ligne[k - 1].x + (ligne[k - 1].t.w + ligne[k].t.w) / 2 + GAP);
+    const last = ligne[ligne.length - 1];
+    if (last && last.x + last.t.w / 2 > X1) last.x = X1 - last.t.w / 2;
+    for (let k = ligne.length - 2; k >= 0; k--) ligne[k].x = Math.min(ligne[k].x, ligne[k + 1].x - (ligne[k + 1].t.w + ligne[k].t.w) / 2 - GAP);
+    const first = ligne[0];
+    if (first && first.x - first.t.w / 2 < X0) { const dec = X0 - (first.x - first.t.w / 2); ligne.forEach(d => d.x += dec); }
+  };
+  rangees.filter(r => r.k !== "vehicule").forEach(r => placerLigne(r.g, r.y));
+  rangees.filter(r => r.k === "vehicule").forEach(r => {
+    r.g.forEach(d => {
+      const xs = [...voisins.get(d.id)].map(v => nodes.find(o => o.id === v)).filter(o => o && o.n.statut !== "vehicule").map(o => o.x);
+      d.tx = xs.length ? d3.mean(xs) : 610;
+    });
+    placerLigne(r.g, r.y);
+  });
+}
+let etatBandes = [];
+function court(s) { return s.length > 34 ? s.slice(0, 32).replace(/[ ,;]+\S*$/, "") + "…" : s; }
+function borner(nodes) {
+  nodes.forEach(d => {
+    d.x = Math.max(60 + d.t.w / 2, Math.min(W - 24 - d.t.w / 2, d.x));
+    d.y = Math.max(24 + d.t.h / 2, Math.min(676 - d.t.h / 2, d.y));
+  });
+}
+
+let t0 = performance.now();
+function animer(t) {
+  if (etat && etat.partSel) {
+    etat.partSel.each(function (p) {
+      const g = p.l.g; if (!g) return;
+      const dur = 3200;
+      let u = (((t - t0) / dur) + p.k / 3) % 1;
+      if (p.l.flux_sens === "inverse") u = 1 - u;
+      const [x, y] = pointQ(g, u);
+      this.setAttribute("cx", x); this.setAttribute("cy", y);
+      this.setAttribute("opacity", Math.sin(Math.PI * u).toFixed(2));
+    });
+  }
+  requestAnimationFrame(animer);
+}
+requestAnimationFrame(animer);
+
+function survoler(id) {
+  if (!etat) return;
+  const v = id && etat.voisins.get(id);
+  etat.noeudSel.classed("estompe", d => !!id && d.id !== id && !v.has(d.id));
+  const off = l => !!id && l.de !== id && l.vers !== id;
+  etat.lienSel.classed("estompe", off);
+  etat.etiq.classed("estompe", off).style("display", l => document.getElementById("b-etiq").checked || (id && !off(l)) ? null : "none");
+  etat.partSel.classed("estompe", p => off(p.l));
+}
+function montrerBulle(e, l) {
+  const r = document.getElementById("scene").getBoundingClientRect();
+  const sens = l.flux ? (l.flux_sens === "inverse" ? `${byId.get(l.vers).nom} → ${byId.get(l.de).nom}` : `${byId.get(l.de).nom} → ${byId.get(l.vers).nom}`) : "";
+  bulle.innerHTML = `<div class="v" style="color:var(--${l.couleur})">${esc(l.verbe)}</div>
+    <div>${esc(byId.get(l.de).nom)} → ${esc(byId.get(l.vers).nom)}</div>
+    ${l.detail ? `<div>${esc(nbsp(l.detail))}</div>` : ""}
+    ${l.flux ? `<div style="color:var(--argent);font-weight:700">${esc(nbsp(l.flux))} <span style="font-weight:400">· ${esc(sens)}</span></div>` : ""}
+    <div class="s">${l.source ? "(" + esc(l.source) + ")" : "Source : voir la fiche"}</div>`;
+  let x = e.clientX - r.left + 14, y = e.clientY - r.top + 12;
+  if (x > r.width - 310) x -= 330;
+  bulle.style.left = x + "px"; bulle.style.top = y + "px"; bulle.style.opacity = 1;
+}
+function cacherBulle() { bulle.style.opacity = 0; }
+
+function md(txt) {
+  const out = []; let liste = false;
+  txt.split("\n").forEach(l => {
+    if (/^# /.test(l)) return;
+    const ligne = esc(nbsp(l)).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    if (/^## /.test(l)) { if (liste) { out.push("</ul>"); liste = false; } out.push(`<h3>${ligne.slice(3)}</h3>`); }
+    else if (/^- /.test(l)) { if (!liste) { out.push("<ul>"); liste = true; } out.push(`<li>${ligne.slice(2)}</li>`); }
+    else if (l.trim()) { if (liste) { out.push("</ul>"); liste = false; } out.push(`<p>${ligne}</p>`); }
+  });
+  if (liste) out.push("</ul>");
+  return out.join("").replace(/<h3>Notes<\/h3>$/, "");
+}
+function ligneConnexion(l, sortant) {
+  const autre = byId.get(sortant ? l.vers : l.de);
+  const fleche = sortant ? "→" : "←";
+  return `<li class="${l.couleur}"><span class="v ${l.couleur}">${esc(l.verbe)}</span> ${fleche}
+    <button class="lien-fiche" data-id="${autre.id}">${esc(autre.nom)}</button>
+    ${l.detail ? `<div>${esc(nbsp(l.detail))}</div>` : ""}
+    ${l.flux ? `<div class="argent">${esc(nbsp(l.flux))}</div>` : ""}
+    ${l.source ? `<div class="src">(${esc(l.source)})</div>` : ""}</li>`;
+}
+function ouvrirFiche(id) {
+  choisi = id;
+  const n = byId.get(id), el = document.getElementById("fiche");
+  const logo = n.logo && D.logos[n.logo];
+  const sort = D.liens.filter(l => l.de === id), entr = D.liens.filter(l => l.vers === id);
+  const puces = [];
+  if (n.type === "programme") puces.push(`<span class="puce">${esc((n.categorie || "programme").toUpperCase())}</span>`);
+  if (n.regime) puces.push(`<span class="puce r ${n.regime}">${REG[n.regime]}</span>`);
+  if (n.role) puces.push(`<span class="puce">${esc(n.role.toUpperCase())}</span>`);
+  puces.push(`<span class="puce">${esc(STAT[n.statut].toUpperCase())}</span>`);
+  const aVue = Object.entries(D.vues).find(([k, v]) => v.centre === id && k !== vue);
+  el.innerHTML = `${logo ? `<img class="logo-fiche" src="${logo.src}" alt="">` : ""}
+    <h2>${esc(n.nom)}</h2><div class="puces">${puces.join("")}</div>
+    ${n.legende ? `<p class="leg">${esc(nbsp(n.legende))}</p>` : ""}
+    <div class="corps">${md(n.texte || "")}</div>
+    ${sort.length ? `<h3>Ce qu'il fait</h3><ul class="connexions">${sort.map(l => ligneConnexion(l, true)).join("")}</ul>` : ""}
+    ${entr.length ? `<h3>Ce qu'il reçoit</h3><ul class="connexions">${entr.map(l => ligneConnexion(l, false)).join("")}</ul>` : ""}
+    ${aVue ? `<button class="ouvrir-vue" data-vue="${aVue[0]}">Ouvrir la vue ${esc(n.nom)}</button>` : ""}`;
+  el.querySelectorAll(".lien-fiche").forEach(b => b.addEventListener("click", () => {
+    const cible = b.dataset.id;
+    if (!etat.nodes.some(d => d.id === cible)) { changerVue("tout"); }
+    ouvrirFiche(cible);
+  }));
+  const bv = el.querySelector(".ouvrir-vue");
+  if (bv) bv.addEventListener("click", () => changerVue(bv.dataset.vue));
+  if (etat) etat.noeudSel.classed("choisi", d => d.id === choisi);
+}
+function ficheVide() {
+  const v = VUES.find(x => x[0] === vue)[1];
+  const c = byId.get(centreVue(vue));
+  document.getElementById("fiche").innerHTML = `<div class="fiche-vide"><h3>Vue</h3><h2>${esc(v)}</h2>
+    <p>${etat.nodes.length} acteurs et programmes, ${etat.liens.length} liens. Au centre : ${esc(c.nom)}.</p>
+    <p>${dispo === "libre" ? "Disposition libre : les acteurs se regroupent d'eux-mêmes selon leurs liens et forment des galaxies. Déplacez-les à la souris, zoomez à la molette." : "Par régime : à gauche les acteurs féodaux, propriétaires de leur domaine ; à droite les acteurs financiers, qui détiennent le foncier comme un actif ; au milieu les véhicules communs, lieux du partenariat public-privé."}</p>
+    <p>Cliquez un acteur ou un programme pour ouvrir sa fiche.</p></div>`;
+}
+function changerVue(v) {
+  vue = v;
+  document.getElementById("b-etiq").checked = !(v === "global" || v === "tout");
+  document.querySelectorAll("#vues button").forEach(b => b.setAttribute("aria-pressed", b.dataset.vue === v));
+  try { history.replaceState(null, "", "#" + v.replace("_", "-")); } catch (e) { }
+  dessiner();
+  if (choisi) ouvrirFiche(choisi); else ficheVide();
+}
+
+document.querySelectorAll("#dispo button").forEach(b => b.addEventListener("click", () => {
+  dispo = b.dataset.dispo;
+  document.querySelectorAll("#dispo button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  dessiner(); if (choisi) ouvrirFiche(choisi); else ficheVide();
+}));
+const vb = document.getElementById("vues");
+VUES.forEach(([k, t]) => {
+  const b = document.createElement("button"); b.type = "button"; b.textContent = t; b.dataset.vue = k;
+  b.addEventListener("click", () => { choisi = null; changerVue(k); }); vb.appendChild(b);
+});
+["b-flux", "b-etiq", "b-cessions", "b-prog"].forEach(id => document.getElementById(id).addEventListener("change", () => { dessiner(); if (choisi) ouvrirFiche(choisi); }));
+svg.on("click", () => { choisi = null; etat.noeudSel.classed("choisi", false); ficheVide(); });
+function depuisHash() {
+  const h = location.hash.slice(1).replace("-", "_");
+  return VUES.some(x => x[0] === h) ? h : "global";
+}
+window.addEventListener("hashchange", () => { const h = depuisHash(); if (h !== vue) { choisi = null; changerVue(h); } });
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => changerVue(depuisHash()));
+</script>
+</body>
+</html>

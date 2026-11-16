@@ -1,4 +1,45 @@
-# graphe-acteurs
+# Schéma des acteurs des entrées de ville
+
+Graphe des acteurs (enseignes, foncières, promoteurs, puissance publique) et des programmes
+(politiques publiques, véhicules communs, opérations) qui transforment les entrées de ville,
+lu à travers l'opposition **féodal ↔ financier**. Projet lié à la thèse CIFRE « Régénérer les
+entrées de ville » (Vertical Sea / TECTA × IPRAUS).
+
+## Organisation
+
+| Dossier ou fichier | Rôle |
+|---|---|
+| `fiches/acteurs/`, `fiches/programmes/` | **La source** : une fiche Markdown par acteur et par programme (voir `FICHES.md`) |
+| `verbes.yaml` | Couleur des liens et sens des flux financiers, déduits du verbe |
+| `vues.yaml` | Les vues : quels nœuds montrer, lequel au centre |
+| `fiches.py` | Compile les fiches en `acteurs.json` (vérifie cibles et vues) |
+| `site/` | Site interactif : `template.html` + `build.py` → `index.html` autonome (données et logos embarqués) |
+| `graphe.py`, `render.py` | Générateur d'images fixes (HTML/CSS → PNG) pour les diapositives |
+| `sorties/` | Rendus PNG et HTML des images fixes |
+| `logos/` | Logos utilisés |
+| `sources/` | Dossiers de recherche en Markdown |
+
+## Chaîne
+
+```
+python fiches.py            # fiches → acteurs.json
+python site/build.py        # → site/index.html (graphe dynamique : vues, fiches, flux animés)
+python graphe.py global --w 1118 --h 394 --agreger bdt,cdch   # image fixe pour une diapo
+```
+
+Le site s'ouvre dans un navigateur (d3 7.9.0 chargé depuis cdnjs). Deux dispositions :
+**libre** (les acteurs se regroupent selon leurs liens, en galaxies) et **par régime**
+(colonne = régime, rangée = statut).
+
+## Logos manquants
+
+E.Leclerc, Les Mousquetaires, ANCT, Banque des Territoires, Tikehau Capital, Mercialys,
+Eurométropole de Strasbourg, SPL Citallia : à déposer dans `logos/` puis à déclarer dans la fiche.
+
+---
+
+# Générateur d'images fixes
+
 
 Générateur de graphes d'acteurs pour les diapositives « entrées de ville ».
 La figure est **calculée** à partir de `acteurs.json` : aucune position n'est saisie à la main.

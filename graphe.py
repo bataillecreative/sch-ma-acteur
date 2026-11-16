@@ -247,6 +247,9 @@ def mesurer(n, est_centre, legmax, agreges, W, couper_noms, legendes):
     elif not prog and n['regime'] not in (None, 'public'):
         lib = REGIMES[n['regime']]
         P.append(('regime', lib, largeur(lib, 'regime'), hauteur('regime'), n['regime']))
+    elif not prog and n.get('role'):
+        lib = n['role'].upper()
+        P.append(('regime', lib, largeur(lib, 'regime'), hauteur('regime'), None))
     lignes = []
     if legendes and n.get('legende'):
         lignes = couper(typo(n['legende']), 'legende', legmax, 1.3)

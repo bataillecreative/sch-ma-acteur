@@ -1,6 +1,7 @@
 {
  "noeuds": [
   {
+   "texte": "# Auchan\n\n## Notes",
    "id": "auchan",
    "nom": "Auchan",
    "type": "acteur",
@@ -8,9 +9,11 @@
    "logo": "image22.png",
    "statut": "prive",
    "regime": "feodal",
+   "role": null,
    "legende": "enseigne"
   },
   {
+   "texte": "# Banque des Territoires\n\n## Notes",
    "id": "bdt",
    "nom": "Banque des Territoires",
    "type": "acteur",
@@ -18,9 +21,11 @@
    "logo": null,
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "direction de la Caisse des Dépôts"
   },
   {
+   "texte": "# Carmila\n\n## Notes",
    "id": "carmila",
    "nom": "Carmila",
    "type": "acteur",
@@ -28,9 +33,11 @@
    "logo": "image27.png",
    "statut": "prive",
    "regime": "financier",
+   "role": null,
    "legende": "foncière cotée des galeries"
   },
   {
+   "texte": "# Carrefour\n\n**Diapo** : Carrefour · Le cas d'une enseigne aux stratégies foncières ambiguës\n\n## Chiffres clés\n\n- 76 → 74 sites · périmètre Nexity, juil. 2023 → févr. 2025 (Carrefour et Nexity, 2023 ; Nexity, 2026)\n- 1 permis · Lomme, environ 430 logements, avr. 2026 (Nexity, 2026)\n- 25 000 → 12 000 · logements visés, nov. 2022 → juil. 2023 (Carrefour, 2022)\n\n## Notes",
    "id": "carrefour",
    "nom": "Carrefour",
    "type": "acteur",
@@ -38,9 +45,11 @@
    "logo": "image25.png",
    "statut": "prive",
    "regime": "bascule",
+   "role": null,
    "legende": "enseigne"
   },
   {
+   "texte": "# Casino\n\n**Diapo** : Icade–Casino : vers la financiarisation de l'action publique\n\n## Notes",
    "id": "casino",
    "nom": "Casino",
    "type": "acteur",
@@ -48,9 +57,11 @@
    "logo": "image29.png",
    "statut": "prive",
    "regime": "bascule",
+   "role": null,
    "legende": "cède pour se désendetter"
   },
   {
+   "texte": "# Caisse des Dépôts\n\n## Notes",
    "id": "cdc",
    "nom": "Caisse des Dépôts",
    "type": "acteur",
@@ -58,9 +69,11 @@
    "logo": "image16.png",
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "actionnaire de référence"
   },
   {
+   "texte": "# CDC Habitat\n\n## Notes",
    "id": "cdch",
    "nom": "CDC Habitat",
    "type": "acteur",
@@ -68,9 +81,11 @@
    "logo": "image18.png",
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "bailleur, filiale de la Caisse"
   },
   {
+   "texte": "# Ceetrus\n\n## Notes",
    "id": "ceetrus",
    "nom": "Ceetrus",
    "type": "acteur",
@@ -78,9 +93,11 @@
    "logo": "image21.png",
    "statut": "prive",
    "regime": "feodal",
+   "role": null,
    "legende": "foncière de la famille"
   },
   {
+   "texte": "# Collectivités\n\n## Notes",
    "id": "collectivites",
    "nom": "Collectivités",
    "type": "acteur",
@@ -88,9 +105,11 @@
    "logo": null,
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "Eurométropole de Strasbourg · SPL Citallia"
   },
   {
+   "texte": "# État · ANCT\n\n## Notes",
    "id": "etat",
    "nom": "État · ANCT",
    "type": "acteur",
@@ -98,9 +117,11 @@
    "logo": null,
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "Action cœur de ville · plan zones commerciales"
   },
   {
+   "texte": "# Frey\n\n**Diapo** : Frey : le privé qui se retire\n\n## Chiffres clés\n\n- 1 · concession encore active (Eurométropole, 2025)\n- 0 · opération livrée connue (Localtis, 2025)\n- 655 M€ · investis en villages de marques (Frey, 2026)\n\n## Notes",
    "id": "frey",
    "nom": "Frey",
    "type": "acteur",
@@ -108,9 +129,11 @@
    "logo": "image_frey_logo.png",
    "statut": "prive",
    "regime": "financier",
+   "role": null,
    "legende": "foncière cotée"
   },
   {
+   "texte": "# GreenYellow\n\n## Notes",
    "id": "greenyellow",
    "nom": "GreenYellow",
    "type": "acteur",
@@ -118,9 +141,11 @@
    "logo": "image33.png",
    "statut": "prive",
    "regime": "financier",
+   "role": null,
    "legende": "ombrières"
   },
   {
+   "texte": "# Icade\n\n**Diapo** : Icade–Casino : vers la financiarisation de l'action publique\n\n## Chiffres clés\n\n- 10 sites · 39 M€ · acté au 30 juin 2025 (Icade et Casino, 2025)\n\n## Notes",
    "id": "icade",
    "nom": "Icade",
    "type": "acteur",
@@ -128,9 +153,11 @@
    "logo": "image19.png",
    "statut": "public",
    "regime": "financier",
+   "role": null,
    "legende": "foncière cotée, filiale de la Caisse"
   },
   {
+   "texte": "# Immo Mousquetaires\n\n## Notes",
    "id": "immo_mousq",
    "nom": "Immo Mousquetaires",
    "type": "acteur",
@@ -138,9 +165,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "hybride",
+   "role": null,
    "legende": "aménageur et promoteur, sans les murs"
   },
   {
+   "texte": "# E.Leclerc\n\n**Diapo** : Leclerc · du foncier détenu par des « barons locaux »\n\n## Chiffres clés\n\n- 579 · adhérents propriétaires de leurs murs (Les Échos, 2026)\n- 16,3 % vs ≈ 3 % · parkings solarisés, Leclerc vs Carrefour (Parksun, 2026)\n- 24,3 % · part de marché, leader (Les Échos, 2026)\n\n## Notes",
    "id": "leclerc",
    "nom": "E.Leclerc",
    "type": "acteur",
@@ -148,9 +177,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "feodal",
+   "role": null,
    "legende": "579 adhérents propriétaires de leurs murs"
   },
   {
+   "texte": "# Mercialys\n\n## Notes",
    "id": "mercialys",
    "nom": "Mercialys",
    "type": "acteur",
@@ -158,9 +189,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "financier",
+   "role": null,
    "legende": "foncière cotée"
   },
   {
+   "texte": "# Les Mousquetaires\n\n**Diapo** : Les Mousquetaires : entre féodal et financier\n\n## Chiffres clés\n\n- ≈ 50 % · des surfaces aux adhérents (LSA, s.d.)\n- 294 · magasins ex-Casino repris, 30 fermetures (AFP, 2025)\n- ≈ 400 · logements à Villeneuve-Loubet, 2028-2032 (Presse Agence, 2026)\n\n## Notes",
    "id": "mousquetaires",
    "nom": "Les Mousquetaires",
    "type": "acteur",
@@ -168,9 +201,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "hybride",
+   "role": null,
    "legende": "≈ 50 % adhérents, ≈ 50 % groupement"
   },
   {
+   "texte": "# Famille Mulliez (AFM)\n\n**Diapo** : Doctrine Mulliez : un patrimoine géré en famille\n\n## Chiffres clés\n\n- 60 / 40 · capital de Régénimo, Ceetrus / Caisse des Dépôts (Banque des Territoires, 2024)\n- 3 000 · logements visés par Régénimo (Banque des Territoires, 2024)\n- 21 ha · première phase, métropole lilloise (New Immo Holding, 2025)\n\n## Notes",
    "id": "mulliez",
    "nom": "Famille Mulliez (AFM)",
    "type": "acteur",
@@ -178,9 +213,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "feodal",
+   "role": null,
    "legende": "patrimoine géré en famille"
   },
   {
+   "texte": "# Nexity\n\n## Notes",
    "id": "nexity",
    "nom": "Nexity",
    "type": "acteur",
@@ -188,19 +225,23 @@
    "logo": "image30.png",
    "statut": "prive",
    "regime": null,
+   "role": "opérateur privé",
    "legende": "promoteur"
   },
   {
+   "texte": "# SCET\n\n## Notes",
    "id": "scet",
    "nom": "SCET",
    "type": "acteur",
    "categorie": null,
-   "logo": "image20.png",
+   "logo": "image17.png",
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "baromètre Icade–SCET"
   },
   {
+   "texte": "# SUPR · Atrato\n\n## Notes",
    "id": "supr",
    "nom": "SUPR · Atrato",
    "type": "acteur",
@@ -208,9 +249,11 @@
    "logo": "image31.png",
    "statut": "prive",
    "regime": "financier",
+   "role": null,
    "legende": "investisseurs britanniques et singapouriens"
   },
   {
+   "texte": "# Tikehau Capital\n\n## Notes",
    "id": "tikehau",
    "nom": "Tikehau Capital",
    "type": "acteur",
@@ -218,9 +261,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "financier",
+   "role": null,
    "legende": "murs ex-Casino"
   },
   {
+   "texte": "# Action cœur de ville\n\n## Repères\n\n- ACV 2 (2023-2026) : au moins 5 Md€ annoncés le 21/11/2022, étendue aux entrées de ville (Banque des Territoires, 2022)\n- ACV 3 : plus de 4 Md€ de la Banque des Territoires d'ici 2032, annoncé le 06/11/2026 (Banque des Territoires, 2026)\n- À vérifier : ACV 1 (2018-2022), 5 Md€ annoncés ; un bilan cité ailleurs parle d'environ 6 Md€ mobilisés\n\n## Notes",
    "id": "acv",
    "nom": "Action cœur de ville",
    "type": "programme",
@@ -228,9 +273,11 @@
    "logo": null,
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "ANCT, cofinancé par la Banque des Territoires"
   },
   {
+   "texte": "# Cap 8000\n\n## Repères\n\n- 65 hypermarchés sur 119 réduits de 25 % ; m² reloués à des moyennes surfaces (Zara, Primark) ou rachetés par Ceetrus (LSA, 2025a)\n\n## Notes",
    "id": "cap8000",
    "nom": "Cap 8000",
    "type": "programme",
@@ -238,9 +285,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "feodal",
+   "role": null,
    "legende": "hypers Auchan réduits"
   },
   {
+   "texte": "# Plan de transformation des zones commerciales\n\n## Repères\n\n- Copiloté par l'ANCT, la DGE et la DGALN ; 112 dossiers déposés\n- 74 lauréats le 29/03/2024 (26 M€), puis 16 le 24/05/2024 (5,4 M€) : 31,4 M€ au total (DGE, 2024 ; Bercy, 2024)\n- Troisième vague annoncée pour l'automne 2024, jamais publiée (LSA, 2024a)\n\n## Notes",
    "id": "ptzc",
    "nom": "Plan de transformation des zones commerciales",
    "type": "programme",
@@ -248,9 +297,11 @@
    "logo": null,
    "statut": "public",
    "regime": "public",
+   "role": null,
    "legende": "lancé en septembre 2023"
   },
   {
+   "texte": "# Régénimo\n\n## Repères\n\n- Ceetrus 60 %, Banque des Territoires 40 % ; convention du 20/11/2024 (Banque des Territoires, 2024)\n- Objectif : 3 000 logements, 640 000 m² de plancher mixte ; première phase 21 ha, métropole lilloise ; 0 logement livré (New Immo Holding, 2025)\n\n## Notes",
    "id": "regenimo",
    "nom": "Régénimo",
    "type": "programme",
@@ -258,9 +309,11 @@
    "logo": null,
    "statut": "vehicule",
    "regime": "financier",
+   "role": null,
    "legende": "foncière commune, novembre 2024"
   },
   {
+   "texte": "# Repenser la Ville\n\n## Repères\n\n- Créée en décembre 2022 : Banque des Territoires 40 %, CDC Habitat 30 %, Frey 30 % (Frey et al., 2022)\n- Démonstrateur : Montigny-lès-Cormeilles\n- Frey se retire en septembre 2025, « faute de rentabilité » (Localtis, 2025) ; la SPL Citallia reprend pour la commune\n\n## Notes",
    "id": "repenser",
    "nom": "Repenser la Ville",
    "type": "programme",
@@ -268,9 +321,11 @@
    "logo": null,
    "statut": "vehicule",
    "regime": "financier",
+   "role": null,
    "legende": "SAS de portage foncier, 200 M€"
   },
   {
+   "texte": "# Ville en Vue\n\n## Repères\n\n- Offre d'Icade sur la reconversion des zones commerciales (Icade et Casino, 2025 ; Icade, 2026)\n- Acquisitions auprès de Casino : 10 sites, 39 M€, acté au 30 juin 2025\n\n## Notes",
    "id": "ville_en_vue",
    "nom": "Ville en Vue",
    "type": "programme",
@@ -278,9 +333,11 @@
    "logo": null,
    "statut": "public",
    "regime": "financier",
+   "role": null,
    "legende": "offre Icade de reconversion"
   },
   {
+   "texte": "# Villeneuve-Loubet\n\n## Repères\n\n- Annonce le 03/06/2026 ; promesse de vente en mai 2026 (Presse Agence, 2026)\n- Environ 400 logements (près de 24 000 m²), projet mixte de plus de 30 000 m² ; phases 2028, 2030, 2032\n- Aucun montage public documenté ; commune de la CASA, carencée au titre de la loi SRU\n\n## Notes",
    "id": "villeneuve_loubet",
    "nom": "Villeneuve-Loubet",
    "type": "programme",
@@ -288,9 +345,11 @@
    "logo": null,
    "statut": "prive",
    "regime": "hybride",
+   "role": null,
    "legende": "Intermarché–Bricomarché, quartier mixte"
   },
   {
+   "texte": "# Villes et Commerces\n\n## Repères\n\n- SIREN 977 819 747 ; annonce en juillet 2023 : 76 sites, ramenés à 74 (Carrefour et Nexity, 2023 ; Nexity, 2026)\n- Apport de Nexity : 39 M€\n- Un seul permis obtenu : Lomme (59), environ 430 logements, avril 2026\n- Logements visés : 25 000 (nov. 2022), puis 12 000 (juil. 2023), aucun chiffre en février 2026\n\n## Notes",
    "id": "villes_commerces",
    "nom": "Villes et Commerces",
    "type": "programme",
@@ -298,6 +357,7 @@
    "logo": null,
    "statut": "vehicule",
    "regime": "bascule",
+   "role": null,
    "legende": "SNC Carrefour 80 %, Nexity 20 %"
   }
  ],
