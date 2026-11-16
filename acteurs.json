@@ -1,0 +1,714 @@
+{
+ "noeuds": [
+  {
+   "id": "auchan",
+   "nom": "Auchan",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image22.png",
+   "statut": "prive",
+   "regime": "feodal",
+   "legende": "enseigne"
+  },
+  {
+   "id": "bdt",
+   "nom": "Banque des Territoires",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "public",
+   "regime": "public",
+   "legende": "direction de la Caisse des Dépôts"
+  },
+  {
+   "id": "carmila",
+   "nom": "Carmila",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image27.png",
+   "statut": "prive",
+   "regime": "financier",
+   "legende": "foncière cotée des galeries"
+  },
+  {
+   "id": "carrefour",
+   "nom": "Carrefour",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image25.png",
+   "statut": "prive",
+   "regime": "bascule",
+   "legende": "enseigne"
+  },
+  {
+   "id": "casino",
+   "nom": "Casino",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image29.png",
+   "statut": "prive",
+   "regime": "bascule",
+   "legende": "cède pour se désendetter"
+  },
+  {
+   "id": "cdc",
+   "nom": "Caisse des Dépôts",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image16.png",
+   "statut": "public",
+   "regime": "public",
+   "legende": "actionnaire de référence"
+  },
+  {
+   "id": "cdch",
+   "nom": "CDC Habitat",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image18.png",
+   "statut": "public",
+   "regime": "public",
+   "legende": "bailleur, filiale de la Caisse"
+  },
+  {
+   "id": "ceetrus",
+   "nom": "Ceetrus",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image21.png",
+   "statut": "prive",
+   "regime": "feodal",
+   "legende": "foncière de la famille"
+  },
+  {
+   "id": "collectivites",
+   "nom": "Collectivités",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "public",
+   "regime": "public",
+   "legende": "Eurométropole de Strasbourg · SPL Citallia"
+  },
+  {
+   "id": "etat",
+   "nom": "État · ANCT",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "public",
+   "regime": "public",
+   "legende": "Action cœur de ville · plan zones commerciales"
+  },
+  {
+   "id": "frey",
+   "nom": "Frey",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image_frey_logo.png",
+   "statut": "prive",
+   "regime": "financier",
+   "legende": "foncière cotée"
+  },
+  {
+   "id": "greenyellow",
+   "nom": "GreenYellow",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image33.png",
+   "statut": "prive",
+   "regime": "financier",
+   "legende": "ombrières"
+  },
+  {
+   "id": "icade",
+   "nom": "Icade",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image19.png",
+   "statut": "public",
+   "regime": "financier",
+   "legende": "foncière cotée, filiale de la Caisse"
+  },
+  {
+   "id": "immo_mousq",
+   "nom": "Immo Mousquetaires",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "hybride",
+   "legende": "aménageur et promoteur, sans les murs"
+  },
+  {
+   "id": "leclerc",
+   "nom": "E.Leclerc",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "legende": "579 adhérents propriétaires de leurs murs"
+  },
+  {
+   "id": "mercialys",
+   "nom": "Mercialys",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "financier",
+   "legende": "foncière cotée"
+  },
+  {
+   "id": "mousquetaires",
+   "nom": "Les Mousquetaires",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "hybride",
+   "legende": "≈ 50 % adhérents, ≈ 50 % groupement"
+  },
+  {
+   "id": "mulliez",
+   "nom": "Famille Mulliez (AFM)",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "legende": "patrimoine géré en famille"
+  },
+  {
+   "id": "nexity",
+   "nom": "Nexity",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image30.png",
+   "statut": "prive",
+   "regime": null,
+   "legende": "promoteur"
+  },
+  {
+   "id": "scet",
+   "nom": "SCET",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image20.png",
+   "statut": "public",
+   "regime": "public",
+   "legende": "baromètre Icade–SCET"
+  },
+  {
+   "id": "supr",
+   "nom": "SUPR · Atrato",
+   "type": "acteur",
+   "categorie": null,
+   "logo": "image31.png",
+   "statut": "prive",
+   "regime": "financier",
+   "legende": "investisseurs britanniques et singapouriens"
+  },
+  {
+   "id": "tikehau",
+   "nom": "Tikehau Capital",
+   "type": "acteur",
+   "categorie": null,
+   "logo": null,
+   "statut": "prive",
+   "regime": "financier",
+   "legende": "murs ex-Casino"
+  },
+  {
+   "id": "acv",
+   "nom": "Action cœur de ville",
+   "type": "programme",
+   "categorie": "politique publique",
+   "logo": null,
+   "statut": "public",
+   "regime": "public",
+   "legende": "ANCT, cofinancé par la Banque des Territoires"
+  },
+  {
+   "id": "cap8000",
+   "nom": "Cap 8000",
+   "type": "programme",
+   "categorie": "programme d'enseigne",
+   "logo": null,
+   "statut": "prive",
+   "regime": "feodal",
+   "legende": "hypers Auchan réduits"
+  },
+  {
+   "id": "ptzc",
+   "nom": "Plan de transformation des zones commerciales",
+   "type": "programme",
+   "categorie": "politique publique",
+   "logo": null,
+   "statut": "public",
+   "regime": "public",
+   "legende": "lancé en septembre 2023"
+  },
+  {
+   "id": "regenimo",
+   "nom": "Régénimo",
+   "type": "programme",
+   "categorie": "véhicule commun",
+   "logo": null,
+   "statut": "vehicule",
+   "regime": "financier",
+   "legende": "foncière commune, novembre 2024"
+  },
+  {
+   "id": "repenser",
+   "nom": "Repenser la Ville",
+   "type": "programme",
+   "categorie": "véhicule commun",
+   "logo": null,
+   "statut": "vehicule",
+   "regime": "financier",
+   "legende": "SAS de portage foncier, 200 M€"
+  },
+  {
+   "id": "ville_en_vue",
+   "nom": "Ville en Vue",
+   "type": "programme",
+   "categorie": "offre",
+   "logo": null,
+   "statut": "public",
+   "regime": "financier",
+   "legende": "offre Icade de reconversion"
+  },
+  {
+   "id": "villeneuve_loubet",
+   "nom": "Villeneuve-Loubet",
+   "type": "programme",
+   "categorie": "opération",
+   "logo": null,
+   "statut": "prive",
+   "regime": "hybride",
+   "legende": "Intermarché–Bricomarché, quartier mixte"
+  },
+  {
+   "id": "villes_commerces",
+   "nom": "Villes et Commerces",
+   "type": "programme",
+   "categorie": "véhicule commun",
+   "logo": null,
+   "statut": "vehicule",
+   "regime": "bascule",
+   "legende": "SNC Carrefour 80 %, Nexity 20 %"
+  }
+ ],
+ "liens": [
+  {
+   "de": "auchan",
+   "vers": "ceetrus",
+   "verbe": "CÉDER",
+   "detail": "m² et coques",
+   "source": "New Immo Holding, 2025",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "auchan",
+   "vers": "cap8000",
+   "verbe": "RÉDUIRE",
+   "detail": "65 hypers réduits de 25 %",
+   "source": "LSA, 2025a",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "bdt",
+   "vers": "acv",
+   "verbe": "FINANCER",
+   "detail": "ACV 3",
+   "source": "Banque des Territoires, 2026",
+   "flux": "plus de 4 Md€",
+   "couleur": "bleu",
+   "flux_sens": "direct"
+  },
+  {
+   "de": "bdt",
+   "vers": "repenser",
+   "verbe": "FINANCER",
+   "detail": "40 %",
+   "source": "Frey et al., 2022",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "bdt",
+   "vers": "regenimo",
+   "verbe": "CO-INVESTIR",
+   "detail": "40 %",
+   "source": "Banque des Territoires, 2024",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "carrefour",
+   "vers": "villes_commerces",
+   "verbe": "DÉTENIR",
+   "detail": "80 %",
+   "source": "Carrefour et Nexity, 2023",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "carrefour",
+   "vers": "carmila",
+   "verbe": "DÉTENIR",
+   "detail": "≈ 30 %",
+   "source": "Carmila, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "carrefour",
+   "vers": "supr",
+   "verbe": "CÉDER",
+   "detail": "78 magasins, Carrefour reste locataire",
+   "source": "SUPR, 2025 ; Carrefour, 2026",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "carrefour",
+   "vers": "greenyellow",
+   "verbe": "SOLARISER",
+   "detail": "350 parkings, 20 ans",
+   "source": "GreenYellow, 2024",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "casino",
+   "vers": "icade",
+   "verbe": "CÉDER",
+   "detail": "10 sites",
+   "source": "Icade et Casino, 2025",
+   "flux": "39 M€",
+   "couleur": "orange",
+   "flux_sens": "inverse"
+  },
+  {
+   "de": "casino",
+   "vers": "tikehau",
+   "verbe": "CÉDER",
+   "detail": "murs, 26 actifs",
+   "source": "Casino, 2024",
+   "flux": "plus de 200 M€",
+   "couleur": "orange",
+   "flux_sens": "inverse"
+  },
+  {
+   "de": "casino",
+   "vers": "mousquetaires",
+   "verbe": "CÉDER",
+   "detail": "fonds, 294 magasins",
+   "source": "AFP, 2025",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "casino",
+   "vers": "leclerc",
+   "verbe": "CÉDER",
+   "detail": "7 hypers en 2019",
+   "source": "Casino, 2019",
+   "flux": "100,5 M€ pour 6",
+   "couleur": "orange",
+   "flux_sens": "inverse"
+  },
+  {
+   "de": "cdc",
+   "vers": "bdt",
+   "verbe": "DIRIGER",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "cdc",
+   "vers": "icade",
+   "verbe": "DÉTENIR",
+   "detail": "actionnaire de référence",
+   "source": "Icade, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "cdc",
+   "vers": "cdch",
+   "verbe": "DÉTENIR",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "cdch",
+   "vers": "repenser",
+   "verbe": "LOGER",
+   "detail": "30 %",
+   "source": "Frey et al., 2022",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "ceetrus",
+   "vers": "regenimo",
+   "verbe": "CO-INVESTIR",
+   "detail": "60 %",
+   "source": "Banque des Territoires, 2024",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "collectivites",
+   "vers": "frey",
+   "verbe": "CONCÉDER",
+   "detail": "ZCN Strasbourg, seule concession active",
+   "source": "Eurométropole, 2025",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "collectivites",
+   "vers": "repenser",
+   "verbe": "REPRENDRE",
+   "detail": "SPL Citallia, Montigny-lès-Cormeilles",
+   "source": "Localtis, 2025",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "etat",
+   "vers": "acv",
+   "verbe": "PILOTER",
+   "detail": "avec l'ANCT",
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "etat",
+   "vers": "ptzc",
+   "verbe": "PILOTER",
+   "detail": "avec la DGE et la DGALN",
+   "source": "DGE, 2024",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "frey",
+   "vers": "repenser",
+   "verbe": "SE RETIRER",
+   "detail": "30 %, sortie « faute de rentabilité »",
+   "source": "Localtis, 2025",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "icade",
+   "vers": "ville_en_vue",
+   "verbe": "PORTER",
+   "detail": "reconversion de zones commerciales",
+   "source": "Icade, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "immo_mousq",
+   "vers": "villeneuve_loubet",
+   "verbe": "COMMANDER",
+   "detail": "promesse de vente, mai 2026",
+   "source": "Presse Agence, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "mercialys",
+   "vers": "leclerc",
+   "verbe": "LOUER",
+   "detail": "Brest",
+   "source": "Mercialys, 2025",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "mousquetaires",
+   "vers": "immo_mousq",
+   "verbe": "DÉVELOPPER",
+   "detail": null,
+   "source": "LSA, s.d.",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "mulliez",
+   "vers": "auchan",
+   "verbe": "EXPLOITER",
+   "detail": null,
+   "source": null,
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "mulliez",
+   "vers": "ceetrus",
+   "verbe": "DÉTENIR",
+   "detail": null,
+   "source": "New Immo Holding, 2025",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "nexity",
+   "vers": "villes_commerces",
+   "verbe": "DÉTENIR",
+   "detail": "20 %",
+   "source": "Carrefour et Nexity, 2023",
+   "flux": "39 M€",
+   "couleur": "bleu",
+   "flux_sens": "direct"
+  },
+  {
+   "de": "nexity",
+   "vers": "villeneuve_loubet",
+   "verbe": "TRANSFORMER",
+   "detail": "≈ 400 logements",
+   "source": "Presse Agence, 2026",
+   "flux": null,
+   "couleur": "bleu"
+  },
+  {
+   "de": "tikehau",
+   "vers": "mousquetaires",
+   "verbe": "LOUER",
+   "detail": "murs ex-Casino, 30 fermetures annoncées en 2025",
+   "source": "AFP, 2025",
+   "flux": null,
+   "couleur": "orange"
+  },
+  {
+   "de": "ptzc",
+   "vers": "collectivites",
+   "verbe": "SUBVENTIONNER",
+   "detail": "90 lauréats",
+   "source": "DGE, 2024 ; Bercy, 2024",
+   "flux": "31,4 M€",
+   "couleur": "bleu",
+   "flux_sens": "direct"
+  }
+ ],
+ "vues": {
+  "global": {
+   "titre": "La Caisse des Dépôts au centre du jeu",
+   "centre": "cdc",
+   "noeuds": [
+    "etat",
+    "cdc",
+    "bdt",
+    "cdch",
+    "icade",
+    "collectivites",
+    "acv",
+    "ptzc",
+    "repenser",
+    "regenimo",
+    "villes_commerces",
+    "villeneuve_loubet",
+    "frey",
+    "casino",
+    "ceetrus",
+    "auchan",
+    "leclerc",
+    "carrefour",
+    "mousquetaires",
+    "immo_mousq",
+    "nexity"
+   ],
+   "note": "On peut agréger bdt, cdch et icade dans la Caisse (option --agreger) si c'est plus lisible."
+  },
+  "frey": {
+   "centre": "frey",
+   "noeuds": [
+    "frey",
+    "repenser",
+    "bdt",
+    "cdch",
+    "cdc",
+    "collectivites"
+   ]
+  },
+  "icade_casino": {
+   "centre": "icade",
+   "noeuds": [
+    "cdc",
+    "icade",
+    "ville_en_vue",
+    "casino",
+    "tikehau",
+    "cdch",
+    "scet"
+   ]
+  },
+  "mulliez": {
+   "centre": "mulliez",
+   "noeuds": [
+    "mulliez",
+    "auchan",
+    "ceetrus",
+    "cap8000",
+    "regenimo",
+    "bdt"
+   ]
+  },
+  "carrefour": {
+   "centre": "carrefour",
+   "noeuds": [
+    "carrefour",
+    "carmila",
+    "villes_commerces",
+    "nexity",
+    "supr",
+    "greenyellow"
+   ]
+  },
+  "mousquetaires": {
+   "centre": "mousquetaires",
+   "noeuds": [
+    "mousquetaires",
+    "immo_mousq",
+    "villeneuve_loubet",
+    "nexity",
+    "casino",
+    "tikehau"
+   ]
+  },
+  "leclerc": {
+   "centre": "leclerc",
+   "noeuds": [
+    "leclerc",
+    "casino",
+    "mercialys"
+   ]
+  },
+  "public": {
+   "centre": "etat",
+   "noeuds": [
+    "etat",
+    "acv",
+    "ptzc",
+    "bdt",
+    "cdc",
+    "collectivites"
+   ]
+  }
+ }
+}

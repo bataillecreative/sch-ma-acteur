@@ -1,0 +1,14 @@
+# Vues du graphe : quels acteurs et programmes montrer, et lequel mettre au centre.
+global:
+  titre: La Caisse des Dépôts au centre du jeu
+  centre: cdc
+  noeuds: [etat, cdc, bdt, cdch, icade, collectivites, acv, ptzc, repenser, regenimo, villes_commerces, villeneuve_loubet,
+           frey, casino, ceetrus, auchan, leclerc, carrefour, mousquetaires, immo_mousq, nexity]
+  note: On peut agréger bdt, cdch et icade dans la Caisse (option --agreger) si c'est plus lisible.
+frey:          {centre: frey, noeuds: [frey, repenser, bdt, cdch, cdc, collectivites]}
+icade_casino:  {centre: icade, noeuds: [cdc, icade, ville_en_vue, casino, tikehau, cdch, scet]}
+mulliez:       {centre: mulliez, noeuds: [mulliez, auchan, ceetrus, cap8000, regenimo, bdt]}
+carrefour:     {centre: carrefour, noeuds: [carrefour, carmila, villes_commerces, nexity, supr, greenyellow]}
+mousquetaires: {centre: mousquetaires, noeuds: [mousquetaires, immo_mousq, villeneuve_loubet, nexity, casino, tikehau]}
+leclerc:       {centre: leclerc, noeuds: [leclerc, casino, mercialys]}
+public:        {centre: etat, noeuds: [etat, acv, ptzc, bdt, cdc, collectivites]}

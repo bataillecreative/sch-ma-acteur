@@ -1,0 +1,6 @@
+# Couleur des connexions, déduite du verbe : tout verbe absent de « orange » est bleu.
+# bleu = tenir, financer, transformer ; orange = céder, se retirer, tension locative.
+orange: [CÉDER, SE RETIRER, LOUER, REPRENDRE]
+# Sens du flux financier {montant} : par défaut, l'argent suit la flèche (FINANCER, CO-INVESTIR, SUBVENTIONNER…).
+# Pour ces verbes, l'argent va dans l'autre sens (l'acheteur ou le locataire paie celui qui cède ou qui loue).
+flux_inverse: [CÉDER, LOUER]
