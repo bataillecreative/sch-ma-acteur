@@ -27,7 +27,9 @@ python site/build.py        # → site/index.html (graphe dynamique : vues, fich
 python graphe.py global --w 1118 --h 394 --agreger bdt,cdch   # image fixe pour une diapo
 ```
 
-Le site s'ouvre dans un navigateur (d3 7.9.0 chargé depuis cdnjs). Deux dispositions :
+Le site est publié par GitHub Pages à chaque push sur `main` (`.github/workflows/site.yml`),
+à l'adresse https://bataillecreative.github.io/sch-ma-acteur/ . Réglage à faire une fois :
+Settings → Pages → Source : « GitHub Actions ». Il s'ouvre aussi en local (`site/index.html`). Deux dispositions :
 **libre** (les acteurs se regroupent selon leurs liens, en galaxies) et **par régime**
 (colonne = régime, rangée = statut).
 
