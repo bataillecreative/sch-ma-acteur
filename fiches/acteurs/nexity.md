@@ -2,6 +2,7 @@
 type: acteur
 id: nexity
 nom: Nexity
+siren: 444 346 795
 logo: image30.png
 statut: privé
 régime: null

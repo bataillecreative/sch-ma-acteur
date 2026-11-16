@@ -11,6 +11,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Groupe Leclerc",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "marque et doctrine, aucun foncier"
@@ -26,6 +27,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Groupe Leclerc",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "SAS et SCI locales : murs, galeries, parkings"
@@ -41,6 +43,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "SCI propriétaires des murs qu'ils exploitent"
@@ -56,6 +59,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Association familiale Mulliez",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "enseigne"
@@ -71,6 +75,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "direction de la Caisse des Dépôts"
@@ -86,6 +91,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Carrefour",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée des galeries"
@@ -101,6 +107,7 @@
    "regime": "bascule",
    "role": null,
    "galaxie": "Carrefour",
+   "siren": null,
    "tete": true,
    "nom_sous_logo": true,
    "legende": "enseigne"
@@ -116,6 +123,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Carrefour",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "filiale immobilière : détient murs et parkings, mène les cessions"
@@ -131,6 +139,7 @@
    "regime": "bascule",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "cède pour se désendetter"
@@ -146,6 +155,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "siren": "180 020 026",
    "tete": true,
    "nom_sous_logo": false,
    "legende": "actionnaire de référence"
@@ -161,6 +171,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "bailleur, filiale de la Caisse"
@@ -176,6 +187,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Association familiale Mulliez",
+   "siren": "969 201 532",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière de la famille"
@@ -191,6 +203,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "siren": "344 092 341",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière collective, support d'assurance-vie des membres"
@@ -206,6 +219,7 @@
    "regime": "public",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "Eurométropole de Strasbourg · SPL Citallia"
@@ -221,6 +235,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "État",
+   "siren": null,
    "tete": true,
    "nom_sous_logo": false,
    "legende": "Action cœur de ville · plan zones commerciales"
@@ -236,6 +251,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée"
@@ -251,6 +267,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Groupe Leclerc",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "achats et logistique, aucun foncier"
@@ -266,6 +283,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "ombrières"
@@ -281,6 +299,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "siren": "582 074 944",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée, filiale de la Caisse"
@@ -296,6 +315,7 @@
    "regime": null,
    "role": "syndic de copropriété",
    "galaxie": "Carrefour",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "syndic de copropriétés commerciales (ex. Amiens)"
@@ -311,6 +331,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "siren": "334 055 647",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière collective (SA), absorbe des SCI d'adhérents"
@@ -326,6 +347,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "siren": "323 347 880",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "aménageur et promoteur, sans les murs"
@@ -341,6 +363,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Groupe Leclerc",
+   "siren": null,
    "tete": true,
    "nom_sous_logo": false,
    "legende": "mouvement d'indépendants"
@@ -356,6 +379,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière cotée"
@@ -371,6 +395,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": "Les Mousquetaires",
+   "siren": null,
    "tete": true,
    "nom_sous_logo": false,
    "legende": "≈ 50 % adhérents, ≈ 50 % groupement"
@@ -386,6 +411,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Association familiale Mulliez",
+   "siren": null,
    "tete": true,
    "nom_sous_logo": false,
    "legende": "patrimoine géré en famille"
@@ -401,6 +427,7 @@
    "regime": null,
    "role": "opérateur privé",
    "galaxie": null,
+   "siren": "444 346 795",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "promoteur"
@@ -416,6 +443,7 @@
    "regime": null,
    "role": "opérateur privé",
    "galaxie": "Association familiale Mulliez",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "opérateur : conçoit, gère"
@@ -431,6 +459,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "baromètre Icade–SCET"
@@ -446,6 +475,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "investisseurs britanniques et singapouriens"
@@ -461,6 +491,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "murs ex-Casino"
@@ -476,6 +507,7 @@
    "regime": "public",
    "role": null,
    "galaxie": "État",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "ANCT, cofinancé par la Banque des Territoires"
@@ -491,6 +523,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Association familiale Mulliez",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "hypers Auchan réduits"
@@ -506,6 +539,7 @@
    "regime": "feodal",
    "role": null,
    "galaxie": "Association familiale Mulliez",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "immobilier et urbanisme commercial, ESSEC"
@@ -521,12 +555,13 @@
    "regime": "public",
    "role": null,
    "galaxie": "État",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "lancé en septembre 2023"
   },
   {
-   "texte": "# Régénimo\n\n## Repères\n\n- Ceetrus 60 %, Banque des Territoires 40 % ; convention du 20/11/2024 (Banque des Territoires, 2024)\n- Objectif : 3 000 logements, 640 000 m² de plancher mixte ; première phase 21 ha, métropole lilloise ; 0 logement livré (New Immo Holding, 2025)\n\n## Notes",
+   "texte": "# Régénimo\n\n## Repères\n\n- Ceetrus 60 %, Banque des Territoires 40 % ; convention du 20/11/2024 (Banque des Territoires, 2024)\n- SAS immatriculée le 28/03/2025, siège à Villeneuve-d'Ascq, présidée par Ceetrus France ; préside elle-même des SAS de projet (Foncière du Breucq, QG, Holden) (répertoire Sirene)\n- Objectif : 3 000 logements, 640 000 m² de plancher mixte ; première phase 21 ha, métropole lilloise ; 0 logement livré (New Immo Holding, 2025)\n\n## Notes",
    "id": "regenimo",
    "nom": "Régénimo",
    "type": "programme",
@@ -536,12 +571,13 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": "943 110 940",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "foncière commune, novembre 2024"
   },
   {
-   "texte": "# Repenser la Ville\n\n## Repères\n\n- Créée en décembre 2022 : Banque des Territoires 40 %, CDC Habitat 30 %, Frey 30 % (Frey et al., 2022)\n- Démonstrateur : Montigny-lès-Cormeilles\n- Frey se retire en septembre 2025, « faute de rentabilité » (Localtis, 2025) ; la SPL Citallia reprend pour la commune\n\n## Notes",
+   "texte": "# Repenser la Ville\n\n## Repères\n\n- Partenariat annoncé le 06/12/2022 : Banque des Territoires 40 %, CDC Habitat 30 %, Frey 30 % (Frey et al., 2022)\n- SAS immatriculée le 11/04/2024, siège à Bezannes (51), présidée par Frey Aménagement et Promotion (répertoire Sirene)\n- Démonstrateur : Montigny-lès-Cormeilles\n- Frey se retire en septembre 2025, « faute de rentabilité » (Localtis, 2025) ; la SPL Citallia reprend pour la commune\n\n## Notes",
    "id": "repenser",
    "nom": "Repenser la Ville",
    "type": "programme",
@@ -551,6 +587,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": null,
+   "siren": "928 092 857",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "SAS de portage foncier, 200 M€"
@@ -566,6 +603,7 @@
    "regime": "financier",
    "role": null,
    "galaxie": "Groupe Caisse des Dépôts",
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "offre Icade de reconversion"
@@ -581,6 +619,7 @@
    "regime": "hybride",
    "role": null,
    "galaxie": null,
+   "siren": null,
    "tete": false,
    "nom_sous_logo": false,
    "legende": "Intermarché–Bricomarché, quartier mixte"
@@ -596,6 +635,7 @@
    "regime": "bascule",
    "role": null,
    "galaxie": null,
+   "siren": "977 819 747",
    "tete": false,
    "nom_sous_logo": false,
    "legende": "SNC Carrefour 80 %, Nexity 20 %"

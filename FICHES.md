@@ -9,6 +9,7 @@ Une fiche = un fichier Markdown. En-tête YAML entre deux lignes `---`, puis tex
 type: acteur
 id: casino                 # identifiant court, minuscules, sert de cible aux connexions
 nom: Casino
+siren: (9 chiffres)       # facultatif : SIREN de la société (répertoire Sirene)
 logo: image29.png          # fichier du dossier logos/, ou null
 statut: privé              # public | véhicule | privé  → rangée du graphe
 régime: bascule            # féodal | hybride | bascule | financier | public → colonne du graphe

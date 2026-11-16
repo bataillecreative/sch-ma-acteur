@@ -2,6 +2,7 @@
 type: programme
 id: villes_commerces
 nom: Villes et Commerces
+siren: 977 819 747
 catégorie: véhicule commun
 statut: véhicule
 régime: bascule

@@ -2,6 +2,7 @@
 type: acteur
 id: icade
 nom: Icade
+siren: 582 074 944
 galaxie: Groupe Caisse des Dépôts
 logo: image19.png
 statut: public

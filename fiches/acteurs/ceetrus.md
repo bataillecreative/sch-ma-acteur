@@ -2,6 +2,7 @@
 type: acteur
 id: ceetrus
 nom: Ceetrus
+siren: 969 201 532
 galaxie: Association familiale Mulliez
 logo: image21.png
 statut: privé

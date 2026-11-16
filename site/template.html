@@ -604,6 +604,7 @@ function ouvrirFiche(id) {
   el.innerHTML = `${logo ? `<img class="logo-fiche" src="${logo.src}" alt="">` : ""}
     <h2>${esc(n.nom)}</h2><div class="puces">${puces.join("")}</div>
     ${n.legende ? `<p class="leg">${esc(nbsp(n.legende))}</p>` : ""}
+    ${n.siren ? `<p class="leg">SIREN ${esc(n.siren)}</p>` : ""}
     <div class="corps">${md(n.texte || "")}</div>
     ${sort.length ? `<h3>Ce qu'il fait</h3><ul class="connexions">${sort.map(l => ligneConnexion(l, true)).join("")}</ul>` : ""}
     ${entr.length ? `<h3>Ce qu'il reçoit</h3><ul class="connexions">${entr.map(l => ligneConnexion(l, false)).join("")}</ul>` : ""}

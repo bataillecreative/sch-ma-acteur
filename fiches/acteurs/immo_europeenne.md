@@ -2,6 +2,7 @@
 type: acteur
 id: immo_europeenne
 nom: L'Immobilière Européenne des Mousquetaires
+siren: 334 055 647
 galaxie: Les Mousquetaires
 logo: null
 statut: privé

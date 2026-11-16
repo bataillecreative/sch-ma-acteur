@@ -2,6 +2,7 @@
 type: acteur
 id: cdc
 nom: Caisse des Dépôts
+siren: 180 020 026
 galaxie: Groupe Caisse des Dépôts
 tête: true
 logo: image16.png

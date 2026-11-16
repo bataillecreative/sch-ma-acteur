@@ -2,6 +2,7 @@
 type: acteur
 id: chabrieres
 nom: Foncière Chabrières
+siren: 344 092 341
 galaxie: Les Mousquetaires
 logo: null
 statut: privé
