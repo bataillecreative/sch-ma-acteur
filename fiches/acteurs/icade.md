@@ -2,6 +2,7 @@
 type: acteur
 id: icade
 nom: Icade
+galaxie: Groupe Caisse des Dépôts
 logo: image19.png
 statut: public
 régime: financier

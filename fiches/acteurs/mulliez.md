@@ -2,6 +2,7 @@
 type: acteur
 id: mulliez
 nom: Famille Mulliez (AFM)
+galaxie: Famille Mulliez
 logo: null
 statut: privé
 régime: féodal

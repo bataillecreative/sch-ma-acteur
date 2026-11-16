@@ -2,6 +2,7 @@
 type: acteur
 id: carrefour
 nom: Carrefour
+galaxie: Carrefour
 logo: image25.png
 statut: privé
 régime: bascule
@@ -11,6 +12,7 @@ connexions:
 - 'DÉTENIR carmila : ≈ 30 % (Carmila, 2026)'
 - 'CÉDER supr : 78 magasins, Carrefour reste locataire (SUPR, 2025 ; Carrefour, 2026)'
 - 'SOLARISER greenyellow : 350 parkings, 20 ans (GreenYellow, 2024)'
+nom_sous_logo: true
 ---
 
 # Carrefour

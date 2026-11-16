@@ -2,6 +2,7 @@
 type: acteur
 id: auchan
 nom: Auchan
+galaxie: Famille Mulliez
 logo: image22.png
 statut: privé
 régime: féodal

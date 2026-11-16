@@ -10,6 +10,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
+   "galaxie": "Famille Mulliez",
+   "nom_sous_logo": false,
    "legende": "enseigne"
   },
   {
@@ -22,6 +24,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "Groupe Caisse des Dépôts",
+   "nom_sous_logo": false,
    "legende": "direction de la Caisse des Dépôts"
   },
   {
@@ -34,6 +38,8 @@
    "statut": "prive",
    "regime": "financier",
    "role": null,
+   "galaxie": "Carrefour",
+   "nom_sous_logo": false,
    "legende": "foncière cotée des galeries"
   },
   {
@@ -46,6 +52,8 @@
    "statut": "prive",
    "regime": "bascule",
    "role": null,
+   "galaxie": "Carrefour",
+   "nom_sous_logo": true,
    "legende": "enseigne"
   },
   {
@@ -58,6 +66,8 @@
    "statut": "prive",
    "regime": "bascule",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "cède pour se désendetter"
   },
   {
@@ -70,6 +80,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "Groupe Caisse des Dépôts",
+   "nom_sous_logo": false,
    "legende": "actionnaire de référence"
   },
   {
@@ -82,6 +94,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "Groupe Caisse des Dépôts",
+   "nom_sous_logo": false,
    "legende": "bailleur, filiale de la Caisse"
   },
   {
@@ -94,6 +108,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
+   "galaxie": "Famille Mulliez",
+   "nom_sous_logo": false,
    "legende": "foncière de la famille"
   },
   {
@@ -106,6 +122,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "Eurométropole de Strasbourg · SPL Citallia"
   },
   {
@@ -118,6 +136,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "État",
+   "nom_sous_logo": false,
    "legende": "Action cœur de ville · plan zones commerciales"
   },
   {
@@ -130,6 +150,8 @@
    "statut": "prive",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "foncière cotée"
   },
   {
@@ -142,6 +164,8 @@
    "statut": "prive",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "ombrières"
   },
   {
@@ -154,6 +178,8 @@
    "statut": "public",
    "regime": "financier",
    "role": null,
+   "galaxie": "Groupe Caisse des Dépôts",
+   "nom_sous_logo": false,
    "legende": "foncière cotée, filiale de la Caisse"
   },
   {
@@ -166,6 +192,8 @@
    "statut": "prive",
    "regime": "hybride",
    "role": null,
+   "galaxie": "Les Mousquetaires",
+   "nom_sous_logo": false,
    "legende": "aménageur et promoteur, sans les murs"
   },
   {
@@ -178,6 +206,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "579 adhérents propriétaires de leurs murs"
   },
   {
@@ -190,6 +220,8 @@
    "statut": "prive",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "foncière cotée"
   },
   {
@@ -202,6 +234,8 @@
    "statut": "prive",
    "regime": "hybride",
    "role": null,
+   "galaxie": "Les Mousquetaires",
+   "nom_sous_logo": false,
    "legende": "≈ 50 % adhérents, ≈ 50 % groupement"
   },
   {
@@ -214,6 +248,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
+   "galaxie": "Famille Mulliez",
+   "nom_sous_logo": false,
    "legende": "patrimoine géré en famille"
   },
   {
@@ -226,6 +262,8 @@
    "statut": "prive",
    "regime": null,
    "role": "opérateur privé",
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "promoteur"
   },
   {
@@ -238,6 +276,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "Groupe Caisse des Dépôts",
+   "nom_sous_logo": false,
    "legende": "baromètre Icade–SCET"
   },
   {
@@ -250,6 +290,8 @@
    "statut": "prive",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "investisseurs britanniques et singapouriens"
   },
   {
@@ -262,6 +304,8 @@
    "statut": "prive",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "murs ex-Casino"
   },
   {
@@ -274,6 +318,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "État",
+   "nom_sous_logo": false,
    "legende": "ANCT, cofinancé par la Banque des Territoires"
   },
   {
@@ -286,6 +332,8 @@
    "statut": "prive",
    "regime": "feodal",
    "role": null,
+   "galaxie": "Famille Mulliez",
+   "nom_sous_logo": false,
    "legende": "hypers Auchan réduits"
   },
   {
@@ -298,6 +346,8 @@
    "statut": "public",
    "regime": "public",
    "role": null,
+   "galaxie": "État",
+   "nom_sous_logo": false,
    "legende": "lancé en septembre 2023"
   },
   {
@@ -310,6 +360,8 @@
    "statut": "vehicule",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "foncière commune, novembre 2024"
   },
   {
@@ -322,6 +374,8 @@
    "statut": "vehicule",
    "regime": "financier",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "SAS de portage foncier, 200 M€"
   },
   {
@@ -334,6 +388,8 @@
    "statut": "public",
    "regime": "financier",
    "role": null,
+   "galaxie": "Groupe Caisse des Dépôts",
+   "nom_sous_logo": false,
    "legende": "offre Icade de reconversion"
   },
   {
@@ -346,6 +402,8 @@
    "statut": "prive",
    "regime": "hybride",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "Intermarché–Bricomarché, quartier mixte"
   },
   {
@@ -358,6 +416,8 @@
    "statut": "vehicule",
    "regime": "bascule",
    "role": null,
+   "galaxie": null,
+   "nom_sous_logo": false,
    "legende": "SNC Carrefour 80 %, Nexity 20 %"
   }
  ],

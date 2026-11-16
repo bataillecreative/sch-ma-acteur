@@ -2,6 +2,7 @@
 type: programme
 id: ptzc
 nom: Plan de transformation des zones commerciales
+galaxie: État
 catégorie: politique publique
 statut: public
 régime: public

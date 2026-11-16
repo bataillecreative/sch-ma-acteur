@@ -13,6 +13,7 @@ logo: image29.png          # fichier du dossier logos/, ou null
 statut: privé              # public | véhicule | privé  → rangée du graphe
 régime: bascule            # féodal | hybride | bascule | financier | public → colonne du graphe
 légende: cède pour se désendetter
+galaxie: Casino         # facultatif : groupe d'appartenance, dessiné comme un halo sur le site
 connexions:
 - CÉDER icade : 10 sites {39 M€} (Icade et Casino, 2025)
 ---

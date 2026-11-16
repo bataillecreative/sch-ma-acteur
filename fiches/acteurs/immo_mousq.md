@@ -2,6 +2,7 @@
 type: acteur
 id: immo_mousq
 nom: Immo Mousquetaires
+galaxie: Les Mousquetaires
 logo: null
 statut: privé
 régime: hybride

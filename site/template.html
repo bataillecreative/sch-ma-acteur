@@ -89,6 +89,8 @@ aside { background: var(--papier); border-left: 1px solid var(--filet); padding:
 .etiq .detail { font: 400 11px var(--texte); fill: var(--gris); }
 .etiq .flux { font: 700 11.5px var(--texte); fill: var(--argent); }
 .particule { fill: var(--argent); pointer-events: none; }
+.halo { fill: color-mix(in srgb, var(--bleu) 6%, transparent); stroke: color-mix(in srgb, var(--bleu) 30%, transparent); stroke-width: 1; stroke-dasharray: 3 4; }
+.halo-nom { font: 600 10.5px var(--texte); letter-spacing: .12em; fill: color-mix(in srgb, var(--bleu) 70%, var(--gris)); }
 .estompe { opacity: .14; transition: opacity .15s; }
 /* fiche */
 .fiche-vide { color: var(--gris); }
@@ -171,7 +173,7 @@ const VUES = [["global", "Vue d'ensemble"], ["tout", "Galaxie complète"], ["lec
 const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const svg = d3.select("#graphe");
 const bulle = document.getElementById("bulle");
-let vue = "global", choisi = null, etat = null, dispo = "libre", sim = null;
+let vue = "global", choisi = null, etat = null, dispo = "libre", sim = null, zoom = null;
 
 const nbsp = s => (s || "").replace(/ ([:;?!%»])/g, " $1").replace(/« /g, "« ").replace(/(\d) (\d{3})/g, "$1 $2").replace(/ (M€|Md€)/g, " $1");
 const esc = s => (s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -224,7 +226,8 @@ function taille(n, centre) {
     let h = centre ? 52 : (logo.ratio < 1.6 ? 40 : 30), w = h * logo.ratio;
     const max = centre ? 140 : 112;
     if (w > max) { w = max; h = w / logo.ratio; }
-    return { w: Math.max(w, capW), h: h + (lab ? 18 : 4), lw: w, lh: h, lab };
+    const sous = n.nom_sous_logo ? 17 : 0;
+    return { w: Math.max(w, capW, sous ? largeurTexte(n.nom, 13, 0.55) : 0), h: h + sous + (lab ? 18 : 4), lw: w, lh: h, lab, sous };
   }
   const fs = centre ? 19 : 15;
   return { w: Math.max(largeurTexte(n.nom, fs, centre ? 0.58 : 0.55), capW), h: fs + (lab ? 20 : 6), lab, fs };
@@ -310,7 +313,9 @@ function dessiner() {
     .append("path").attr("d", "M1 1L9 5L1 9").attr("fill", "none").attr("stroke", c === "bleu" ? "var(--bleu)" : "var(--orange)").attr("stroke-width", 1.6).attr("stroke-linecap", "round"));
 
   const zoneG = svg.append("g");
-  svg.call(d3.zoom().scaleExtent([0.4, 3]).filter(e => !e.button && e.type !== "dblclick").on("zoom", e => zoneG.attr("transform", e.transform)));
+  zoom = d3.zoom().scaleExtent([0.3, 3]).filter(e => !e.button && e.type !== "dblclick").on("zoom", e => zoneG.attr("transform", e.transform));
+  svg.call(zoom).call(zoom.transform, d3.zoomIdentity);
+  const gH = zoneG.append("g");
   const gL = zoneG.append("g"), gP = zoneG.append("g"), gE = zoneG.append("g"), gN = zoneG.append("g");
   const flux = document.getElementById("b-flux").checked;
   const lienSel = gL.selectAll("g").data(liens).join("g");
@@ -354,6 +359,7 @@ function dessiner() {
       g.append("rect").attr("class", "plaque").attr("x", -t.lw / 2 - 4).attr("y", y - 3).attr("width", t.lw + 8).attr("height", t.lh + 6).attr("rx", 5);
       g.append("image").attr("href", logo.src).attr("x", -t.lw / 2).attr("y", y).attr("width", t.lw).attr("height", t.lh);
       y += t.lh + 14;
+      if (t.sous) { g.append("text").attr("class", "nom").style("font-size", "13px").attr("text-anchor", "middle").attr("y", y + 1).text(n.nom); y += 16; }
     } else {
       g.append("text").attr("class", "nom" + (d.id === centre ? " centre" : "")).attr("text-anchor", "middle").attr("y", y + t.fs * 0.85).text(n.nom);
       y += t.fs + 14;
@@ -361,8 +367,21 @@ function dessiner() {
     if (t.lab) g.append("text").attr("class", "cap " + (n.regime === "bascule" ? "bascule" : n.regime ? "" : "role")).attr("text-anchor", "middle").attr("y", y).text(t.lab);
   });
 
+  const galaxies = d3.groups(nodes.filter(d => d.n.galaxie), d => d.n.galaxie).filter(([, g]) => g.length > 1);
+  const haloSel = gH.selectAll("g").data(galaxies).join("g").style("display", dispo === "libre" ? null : "none");
+  haloSel.append("path").attr("class", "halo");
+  haloSel.append("text").attr("class", "halo-nom").attr("text-anchor", "middle").text(([k]) => k.toUpperCase());
+  const contour = d3.line().curve(d3.curveCatmullRomClosed.alpha(0.6));
   function placer() {
     borner(nodes);
+    haloSel.each(function ([, g]) {
+      const pts = [];
+      g.forEach(d => { const w = d.t.w / 2 + 22, h = d.t.h / 2 + 20; pts.push([d.x - w, d.y - h], [d.x + w, d.y - h], [d.x + w, d.y + h], [d.x - w, d.y + h]); });
+      const hull = d3.polygonHull(pts);
+      d3.select(this).select("path").attr("d", contour(hull));
+      const top = d3.min(hull, p => p[1]), cx = d3.mean(g, d => d.x);
+      d3.select(this).select("text").attr("x", cx).attr("y", top - 6);
+    });
     noeudSel.attr("transform", d => `translate(${d.x},${d.y})`);
     lienSel.each(function (d) {
       d.g = geometrie(d);
@@ -382,9 +401,24 @@ function dessiner() {
       .force("x", d3.forceX(W / 2).strength(0.04))
       .force("y", d3.forceY(360).strength(0.07))
       .force("col", collision(18))
+      .force("galaxie", alpha => {
+        const c = d3.rollup(nodes.filter(d => d.n.galaxie), g => [d3.mean(g, d => d.x), d3.mean(g, d => d.y)], d => d.n.galaxie);
+        nodes.forEach(d => { if (!d.n.galaxie) return; const [cx, cy] = c.get(d.n.galaxie); d.vx += (cx - d.x) * 0.12 * alpha; d.vy += (cy - d.y) * 0.12 * alpha; });
+        // chaque galaxie repousse ce qui ne lui appartient pas
+        galaxies.forEach(([k, g]) => {
+          const [cx, cy] = c.get(k);
+          const r = d3.max(g, d => Math.hypot(d.x - cx, d.y - cy) + Math.max(d.t.w, d.t.h) / 2) + 34;
+          nodes.forEach(d => {
+            if (d.n.galaxie === k) return;
+            const dx = d.x - cx, dy = d.y - cy, dist = Math.hypot(dx, dy) || 1, lim = r + Math.max(d.t.w, d.t.h) / 2;
+            if (dist < lim) { const f = (lim - dist) / dist * 0.25 * alpha * 4; d.vx += dx * f; d.vy += dy * f; }
+          });
+        });
+      })
+      .on("end", () => cadrer(nodes))
       .alpha(reduit ? 0 : 0.9).alphaDecay(0.035)
       .on("tick", placer);
-    if (reduit) { for (let i = 0; i < 300; i++) sim.tick(); placer(); }
+    if (reduit) { for (let i = 0; i < 300; i++) sim.tick(); placer(); cadrer(nodes); }
   }
 
   etat = { nodes, liens, noeudSel, lienSel, etiq, partSel, voisins };
@@ -442,8 +476,17 @@ function ranger(nodes, voisins, centre) {
   });
 }
 let etatBandes = [];
+function cadrer(nodes) {
+  if (dispo !== "libre" || !nodes.length) return;
+  const x0 = d3.min(nodes, d => d.x - d.t.w / 2) - 40, x1 = d3.max(nodes, d => d.x + d.t.w / 2) + 40;
+  const y0 = d3.min(nodes, d => d.y - d.t.h / 2) - 50, y1 = d3.max(nodes, d => d.y + d.t.h / 2) + 40;
+  const k = Math.min(1.4, W / (x1 - x0), H / (y1 - y0));
+  const t = d3.zoomIdentity.translate(W / 2 - k * (x0 + x1) / 2, H / 2 - k * (y0 + y1) / 2).scale(k);
+  svg.transition().duration(reduit ? 0 : 600).call(zoom.transform, t);
+}
 function court(s) { return s.length > 34 ? s.slice(0, 32).replace(/[ ,;]+\S*$/, "") + "…" : s; }
 function borner(nodes) {
+  if (dispo === "libre") return;
   nodes.forEach(d => {
     d.x = Math.max(60 + d.t.w / 2, Math.min(W - 24 - d.t.w / 2, d.x));
     d.y = Math.max(24 + d.t.h / 2, Math.min(676 - d.t.h / 2, d.y));
@@ -543,7 +586,7 @@ function ficheVide() {
   const c = byId.get(centreVue(vue));
   document.getElementById("fiche").innerHTML = `<div class="fiche-vide"><h3>Vue</h3><h2>${esc(v)}</h2>
     <p>${etat.nodes.length} acteurs et programmes, ${etat.liens.length} liens. Au centre : ${esc(c.nom)}.</p>
-    <p>${dispo === "libre" ? "Disposition libre : les acteurs se regroupent d'eux-mêmes selon leurs liens et forment des galaxies. Déplacez-les à la souris, zoomez à la molette." : "Par régime : à gauche les acteurs féodaux, propriétaires de leur domaine ; à droite les acteurs financiers, qui détiennent le foncier comme un actif ; au milieu les véhicules communs, lieux du partenariat public-privé."}</p>
+    <p>${dispo === "libre" ? "Disposition libre : chaque groupe forme une galaxie (halo pointillé) ; les véhicules communs flottent entre les galaxies qu'ils relient. Déplacez les acteurs à la souris, zoomez à la molette." : "Par régime : à gauche les acteurs féodaux, propriétaires de leur domaine ; à droite les acteurs financiers, qui détiennent le foncier comme un actif ; au milieu les véhicules communs, lieux du partenariat public-privé."}</p>
     <p>Cliquez un acteur ou un programme pour ouvrir sa fiche.</p></div>`;
 }
 function changerVue(v) {

@@ -2,6 +2,7 @@
 type: programme
 id: ville_en_vue
 nom: Ville en Vue
+galaxie: Groupe Caisse des Dépôts
 catégorie: offre
 statut: public
 régime: financier

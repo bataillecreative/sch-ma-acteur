@@ -2,6 +2,7 @@
 type: acteur
 id: ceetrus
 nom: Ceetrus
+galaxie: Famille Mulliez
 logo: image21.png
 statut: privé
 régime: féodal

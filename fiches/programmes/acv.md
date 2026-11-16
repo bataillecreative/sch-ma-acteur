@@ -2,6 +2,7 @@
 type: programme
 id: acv
 nom: Action cœur de ville
+galaxie: État
 catégorie: politique publique
 statut: public
 régime: public

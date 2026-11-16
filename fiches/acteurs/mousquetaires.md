@@ -2,6 +2,7 @@
 type: acteur
 id: mousquetaires
 nom: Les Mousquetaires
+galaxie: Les Mousquetaires
 logo: null
 statut: privé
 régime: hybride

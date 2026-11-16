@@ -2,6 +2,7 @@
 type: acteur
 id: cdch
 nom: CDC Habitat
+galaxie: Groupe Caisse des Dépôts
 logo: image18.png
 statut: public
 régime: public

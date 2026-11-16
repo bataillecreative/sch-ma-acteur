@@ -2,6 +2,7 @@
 type: acteur
 id: bdt
 nom: Banque des Territoires
+galaxie: Groupe Caisse des Dépôts
 logo: null
 statut: public
 régime: public

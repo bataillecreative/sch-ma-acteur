@@ -50,7 +50,7 @@ def compiler():
         fm, corps = lire(p)
         noeuds.append({"texte": corps.strip(), "id": fm["id"], "nom": fm["nom"], "type": fm.get("type", "acteur"), "categorie": fm.get("catégorie"),
                        "logo": fm.get("logo"), "statut": STAT[fm["statut"]],
-                       "regime": REG[fm.get("régime")], "role": fm.get("rôle"), "legende": fm.get("légende", "")})
+                       "regime": REG[fm.get("régime")], "role": fm.get("rôle"), "galaxie": fm.get("galaxie"), "nom_sous_logo": bool(fm.get("nom_sous_logo")), "legende": fm.get("légende", "")})
         for s in fm.get("connexions") or []:
             l = connexion(fm["id"], s)
             l["couleur"] = "orange" if l["verbe"] in orange else "bleu"
